@@ -1,13 +1,16 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+import Home from "./components/Home";
 import Navbar from "./components/Navbar";
-import "./App.css";
+import { BrowserRouter } from "react-router-dom";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Navbar />
+      <div>
+        <BrowserRouter>
+          <Navbar />
+          <Home />
+        </BrowserRouter>
       </div>
     );
   }

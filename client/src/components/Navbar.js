@@ -1,6 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
 
-class Navbar extends React.Component {
+class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -8,15 +8,12 @@ class Navbar extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <nav
-          class="navbar navbar-expand-lg navbar-dark bg-dark  "
-          role="navigation"
-        >
-          <a class="navbar-brand" href="#">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a className="navbar-brand" href="#">
             Navbar
           </a>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-toggle="collapse"
             data-target="#navbarColor02"
@@ -24,46 +21,91 @@ class Navbar extends React.Component {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon" />
+            <span className="navbar-toggler-icon" />
           </button>
 
-          <div class="collapse navbar-collapse" id="navbarColor02">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">
-                  Home <span class="sr-only">(current)</span>
+          <div className="collapse navbar-collapse" id="navbarColor02">
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item active">
+                <a
+                  className="nav-link"
+                  href="#"
+                  data-toggle="tooltip"
+                  data-placement="auto"
+                  title="Tooltip on top"
+                >
+                  Home <span className="sr-only">(current)</span>
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
+              <li className="nav-item">
+                <a
+                  className="nav-link"
+                  href="#"
+                  data-toggle="tooltip"
+                  data-placement="auto"
+                  title="Tooltip on top"
+                >
                   Features
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
+              <li className="nav-item">
+                <a
+                  className="nav-link"
+                  href="#"
+                  data-toggle="tooltip"
+                  data-placement="auto"
+                  title="Tooltip on top"
+                >
                   Pricing
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
+              <li className="nav-item">
+                <a
+                  className="nav-link"
+                  href="#"
+                  data-toggle="tooltip"
+                  data-placement="auto"
+                  title="Tooltip on top"
+                >
                   About
                 </a>
               </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <input
-                class="form-control mr-sm-2"
-                type="text"
-                placeholder="Search"
-              />
-              <button class="btn btn-secondary my-2 my-sm-0" type="submit">
-                Search
+            <button
+              type="button"
+              className="btn btn-secondary dropdown-toggle"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Random small projects
+            </button>
+            <div className="dropdown-menu dropdown-menu-right">
+              <button className="dropdown-item" type="button">
+                Higher - Lower
               </button>
-            </form>
+              <button className="dropdown-item" type="button">
+                Love Calculator
+              </button>
+              <button className="dropdown-item" type="button">
+                To do List
+              </button>
+              <button className="dropdown-item" type="button">
+                Voting (using Redux)
+              </button>
+
+              <button className="dropdown-item" type="button">
+                Web Scraper
+              </button>
+              <button className="dropdown-item" type="button">
+                Calculator
+              </button>
+            </div>
           </div>
         </nav>
       </React.Fragment>
     );
   }
 }
+
 export default Navbar;
