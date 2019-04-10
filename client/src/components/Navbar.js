@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-
+import { Route, Link, BrowserRouter } from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
 class Navbar extends Component {
   constructor(props) {
     super(props);
@@ -8,10 +10,11 @@ class Navbar extends Component {
   render() {
     return (
       <React.Fragment>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a className="navbar-brand" href="#">
-            Navbar
-          </a>
+        <nav
+          className="navbar navbar-expand-lg navbar-dark bg-dark"
+          style={{ marginTop: "5%" }}
+        >
+          <h1 style={{ color: "white", marginRight: "1%" }}>Navbar</h1>
           <button
             className="navbar-toggler"
             type="button"
@@ -27,48 +30,28 @@ class Navbar extends Component {
           <div className="collapse navbar-collapse" id="navbarColor02">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <a
-                  className="nav-link"
-                  href="#"
-                  data-toggle="tooltip"
-                  data-placement="auto"
-                  title="Tooltip on top"
-                >
-                  Home <span className="sr-only">(current)</span>
-                </a>
+                <Link to="/">
+                  <h3
+                    className="nav-link"
+                    data-toggle="tooltip"
+                    data-placement="auto"
+                    title="Tooltip on top"
+                  >
+                    Home <span className="sr-only">(current)</span>
+                  </h3>
+                </Link>
               </li>
               <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="#"
-                  data-toggle="tooltip"
-                  data-placement="auto"
-                  title="Tooltip on top"
-                >
-                  Features
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="#"
-                  data-toggle="tooltip"
-                  data-placement="auto"
-                  title="Tooltip on top"
-                >
-                  Pricing
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="#"
-                  data-toggle="tooltip"
-                  data-placement="auto"
-                  title="Tooltip on top"
-                >
-                  About
-                </a>
+                <Link to="/about">
+                  <h3
+                    className="nav-link"
+                    data-toggle="tooltip"
+                    data-placement="auto"
+                    title="Tooltip on top"
+                  >
+                    Features
+                  </h3>
+                </Link>
               </li>
             </ul>
             <button

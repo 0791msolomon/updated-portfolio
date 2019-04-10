@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import { BrowserRouter } from "react-router-dom";
+import Routes from "./components/Routes";
 
 class App extends Component {
   render() {
@@ -9,7 +10,9 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <Navbar />
-          <Home />
+          <div style={{ margin: "5%" }}>
+            <Routes />
+          </div>
         </BrowserRouter>
       </div>
     );
