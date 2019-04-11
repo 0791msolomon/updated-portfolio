@@ -5,11 +5,10 @@ class Home extends Component {
     super(props);
     this.state = {};
   }
-  getAPI = async () => {
-    let response = await axios.get("/api/hello");
+  getApi = async () => {
+    let response = await axios.get("/api/todo");
     console.log(response);
   };
-
   render() {
     return (
       <React.Fragment>
@@ -65,6 +64,7 @@ class Home extends Component {
             </div>
           </div>
         </div>
+        <button onClick={this.getApi}>click me for api</button>
       </React.Fragment>
     );
   }
