@@ -13,8 +13,58 @@ class Home extends Component {
   render() {
     return (
       <React.Fragment>
-        <div>Home page baby</div>
-        <button onClick={this.getAPI}>Click to check api call</button>
+        {/* <div>Home page baby</div> */}
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              flexWrap: "wrap"
+            }}
+          >
+            <div className="card col-lg-2 col-md-4 col-sm-6 col-xs-12">
+              <img className="card-img-top" src="..." alt="Card image cap" />
+              <div className="card-body">
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+            <div className="card col-lg-3 col-md-4 col-sm-6 col-xs-12">
+              <img className="card-img-top" src="..." alt="Card image cap" />
+              <div className="card-body">
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+            <div className="card col-lg-3 col-md-4 col-sm-6 col-xs-12">
+              <img className="card-img-top" src="..." alt="Card image cap" />
+              <div className="card-body">
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+            <div className="card col-lg-3 col-md-4 col-sm-6 col-xs-12">
+              <img className="card-img-top" src="..." alt="Card image cap" />
+              <div className="card-body">
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </React.Fragment>
     );
   }

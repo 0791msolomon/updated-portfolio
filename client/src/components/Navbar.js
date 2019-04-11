@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Route, Link, BrowserRouter } from "react-router-dom";
-import Home from "./Home";
-import About from "./About";
+import { Link } from "react-router-dom";
 class Navbar extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +10,7 @@ class Navbar extends Component {
       <React.Fragment>
         <nav
           className="navbar navbar-expand-lg navbar-dark bg-dark"
-          style={{ marginTop: "5%" }}
+          style={{ marginTop: "3%" }}
         >
           <h1 style={{ color: "white", marginRight: "1%" }}>Navbar</h1>
           <button
