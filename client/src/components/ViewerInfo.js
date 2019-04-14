@@ -50,10 +50,14 @@ class ViewerInfo extends React.Component {
       });
       return;
     }
-
+    axios.post("/api/contactForm", { name, company, email }).then(res => {
+      console.log(res);
+    });
     this.setState({
       errors: {}
     });
+
+    this.props.history.push("/");
   };
   render() {
     const { errors } = this.state;

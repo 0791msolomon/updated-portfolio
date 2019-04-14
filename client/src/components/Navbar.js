@@ -35,7 +35,7 @@ class Navbar extends Component {
                     data-placement="auto"
                     title="Tooltip on top"
                   >
-                    Home <span className="sr-only">(current)</span>
+                    <i className="fas fa-home" /> Home
                   </h3>
                 </Link>
               </li>
@@ -47,7 +47,31 @@ class Navbar extends Component {
                     data-placement="auto"
                     title="Tooltip on top"
                   >
-                    Features
+                    <i className="fas fa-question" /> About
+                  </h3>
+                </Link>
+              </li>
+              <li className="nav-item active">
+                <Link to="/params/">
+                  <h3
+                    className="nav-link"
+                    data-toggle="tooltip"
+                    data-placement="auto"
+                    title="Tooltip on top"
+                  >
+                    <i className="fas fa-home" /> Params
+                  </h3>
+                </Link>
+              </li>
+              <li className="nav-item active">
+                <Link to="/weather">
+                  <h3
+                    className="nav-link"
+                    data-toggle="tooltip"
+                    data-placement="auto"
+                    title="Tooltip on top"
+                  >
+                    <i className="fas fa-home" /> Weather
                   </h3>
                 </Link>
               </li>
