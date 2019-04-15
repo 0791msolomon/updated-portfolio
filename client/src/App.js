@@ -6,9 +6,8 @@ import NotFound from "./components/NotFound";
 import Params from "./components/Params";
 import Weather from "./components/Weather";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import Routes from "./components/Routes";
 import ViewerInfo from "./components/ViewerInfo";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 class App extends Component {
   render() {
     return (
@@ -25,7 +24,14 @@ class App extends Component {
               <Route component={NotFound} />
             </Switch>
           </div>
-          <div className="container" style={{ paddingTop: "40%" }}>
+          <div
+            className="container"
+            style={{
+              marginTop: "10%",
+              paddingBottom: "2%",
+              textAlign: "center"
+            }}
+          >
             <ViewerInfo />
           </div>
         </Router>

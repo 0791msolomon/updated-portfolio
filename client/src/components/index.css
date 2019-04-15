@@ -1,10 +1,18 @@
-.footer{
+footer{
     position: fixed;
    left: 0;
    bottom: 0;
+   height: 3%;
     width: 100%;
-   background-color: green;
-   opacity: .4;
+   background-color: grey;
+   /* opacity: .4; */
    color: white;
    text-align: center;
+  }
+  
+  .weatherForecast{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+  justify-content: center
   }
