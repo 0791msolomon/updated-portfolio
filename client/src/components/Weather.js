@@ -1,7 +1,7 @@
 import React from "react";
 class Weather extends React.Component {
   componentDidMount = () => {
-    console.log(process.env.REACT_APP_SHIT);
+    console.log(1);
   };
   render() {
     return (
