@@ -56,8 +56,6 @@ class ViewerInfo extends React.Component {
     this.setState({
       errors: {}
     });
-
-    this.props.history.push("/");
   };
   render() {
     const { errors } = this.state;
