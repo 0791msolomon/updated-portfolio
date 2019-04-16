@@ -27,15 +27,17 @@ class App extends Component {
           >
             <div
               className="col-xl-7 col-lg-11  col-md-11  rounded"
-              style={{ border: "solid 1px black", margin: "0% 0% 3% 0%" }}
+              style={{ backgroundColor: "lightGrey", margin: "0% 0% 3% 0%" }}
             >
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route path="/about" component={About} />
-                <Route path="/params/:name" component={Params} />
-                <Route path="/weather" component={Weather} />
-                <Route component={NotFound} />
-              </Switch>
+              <div style={{ marginTop: "5%" }}>
+                <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route path="/about" component={About} />
+                  <Route path="/params/:name" component={Params} />
+                  <Route path="/weather" component={Weather} />
+                  <Route component={NotFound} />
+                </Switch>
+              </div>
             </div>
             <div
               className="col-xl-4 col-lg-10"

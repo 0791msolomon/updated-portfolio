@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const router = require("./client/app/routes");
+const router = require("./app/routes");
 const app = express();
 const dotenv = require("dotenv");
 dotenv.config();
@@ -13,7 +13,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //   console.log(req);
 //   next();
 // });
-//
 app.use(router);
 
 app.listen(port, () => {

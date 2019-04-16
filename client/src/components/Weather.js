@@ -25,7 +25,9 @@ class Weather extends React.Component {
   render() {
     return (
       <div className="container weatherForecast  ">
-        <h1 className="display-2 lead ">Weather Forecast</h1>
+        <h1 className="display-2 lead " style={{ color: "#0AA7F6" }}>
+          Weather Forecast
+        </h1>
         <div className="display-4 text-center">
           Enter in the 5 digit zip code for any area you'd like to see
         </div>

@@ -35,7 +35,7 @@ class Navbar extends Component {
                     data-placement="auto"
                     title="Tooltip on top"
                   >
-                    <i className="fas fa-home" /> Home
+                    <i className="fa fa-home" /> Home
                   </h3>
                 </Link>
               </li>
@@ -47,7 +47,7 @@ class Navbar extends Component {
                     data-placement="auto"
                     title="Tooltip on top"
                   >
-                    <i className="fas fa-question" /> About
+                    <i className="fa fa-question" /> About
                   </h3>
                 </Link>
               </li>
@@ -59,7 +59,7 @@ class Navbar extends Component {
                     data-placement="auto"
                     title="Tooltip on top"
                   >
-                    <i className="fas fa-home" /> Params
+                    <i className="fa fa-home" /> Params
                   </h3>
                 </Link>
               </li>
@@ -71,7 +71,7 @@ class Navbar extends Component {
                     data-placement="auto"
                     title="Tooltip on top"
                   >
-                    <i className="fas fa-home" /> Weather
+                    <i className="fa fa-bolt" /> Weather
                   </h3>
                 </Link>
               </li>
