@@ -1,15 +1,10 @@
-footer{
-    position: fixed;
-   left: 0;
-   bottom: 0;
-   height: 3%;
-    width: 100%;
-   background-color: grey;
-   /* opacity: .4; */
-   color: white;
-   text-align: center;
-  }
-  
+ 
+  .fa-facebook-square {
+    color: #3b5998;
+}
+.fa-linkedin-square {
+    color: #4875B4;
+}
   .weatherForecast{
       display: flex;
       flex-direction: row;

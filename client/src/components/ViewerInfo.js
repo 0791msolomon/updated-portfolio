@@ -69,7 +69,7 @@ class ViewerInfo extends React.Component {
           }}
         >
           <div
-            className="col-lg-6 col-sm-12"
+            // className="col-lg-6 col-sm-12"
             style={{
               border: "solid 1px black",
               padding: "3% 1% 1% 1%",
@@ -77,8 +77,8 @@ class ViewerInfo extends React.Component {
             }}
           >
             <h3 style={{ display: "flex", textAlign: "center" }}>
-              If you'd like to get in touch feel free to leave your information
-              and I'll get back to you as soon as possible
+              If you'd like to get in touch leave your information and I'll get
+              back to you as soon as possible
             </h3>
             <form onSubmit={this.sendInfo}>
               <TextInputGroup

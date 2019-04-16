@@ -7,6 +7,7 @@ import Params from "./components/Params";
 import Weather from "./components/Weather";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ViewerInfo from "./components/ViewerInfo";
+import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 class App extends Component {
   render() {
@@ -14,25 +15,40 @@ class App extends Component {
       <div style={{ height: "100%" }}>
         <Router>
           <Navbar />
-          <div className="container" style={{ marginTop: "5%" }}>
-            {/* <Routes /> */}
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/about" component={About} />
-              <Route path="/params/:name" component={Params} />
-              <Route path="/weather" component={Weather} />
-              <Route component={NotFound} />
-            </Switch>
-          </div>
           <div
-            className="container"
+            // className="container"
             style={{
-              marginTop: "10%",
-              paddingBottom: "2%",
-              textAlign: "center"
+              margin: "5%",
+              display: "flex",
+              flexDirection: "row",
+              flexWrap: "wrap",
+              justifyContent: "space-evenly"
             }}
           >
-            <ViewerInfo />
+            <div
+              className="col-xl-7 col-lg-11  col-md-11  rounded"
+              style={{ border: "solid 1px black", margin: "0% 0% 3% 0%" }}
+            >
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/about" component={About} />
+                <Route path="/params/:name" component={Params} />
+                <Route path="/weather" component={Weather} />
+                <Route component={NotFound} />
+              </Switch>
+            </div>
+            <div
+              className="col-xl-4 col-lg-10"
+              style={{
+                margin: "0% 3%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between"
+              }}
+            >
+              <ViewerInfo />
+              <Contact />
+            </div>
           </div>
         </Router>
         {/* <Footer /> */}
