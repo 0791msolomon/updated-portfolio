@@ -1,26 +1,35 @@
 import React from "react";
 import classnames from "classnames";
 import * as weatherServices from "../services/WeatherServices";
+import moment from "moment";
 import axios from "axios";
+import ThreeDayForecast from "./charts/ThreeDayForecast";
 class Weather extends React.Component {
-  state = { zip: "" };
+  state = { zip: "", unit: "imperial", displayGraph: false };
   onChange = e => {
     this.setState({
       [e.target.name]: e.target.value
     });
   };
-  getForecast = e => {
+  getForecast = async e => {
     e.preventDefault();
-    console.log(process.env.REACT_APP_WEATHER_API_KEY);
-    const url = `api.openweathermap.org/data/2.5/forecast?zip=86005,us&APPID=49d19469d121e07effc45f5ef3da6790`;
-    axios
-      .get(url)
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    let response = await axios.get(
+      `http://api.openweathermap.org/data/2.5/forecast?zip=${
+        this.state.zip
+      },us&units=${this.state.unit}&APPID=${
+        process.env.REACT_APP_WEATHER_API_KEY
+      }`
+    );
+    let sixHourInterval = [];
+    response.data.list.map((item, i) => {
+      if (i === 0 || i % 2 === 0) {
+        sixHourInterval.push(item);
+      }
+    });
+    sixHourInterval.map(item => {
+      console.log(item);
+    });
+    this.setState({ displayGraph: true });
   };
   render() {
     return (
@@ -57,6 +66,7 @@ class Weather extends React.Component {
               Gather Weather Data
             </button>
           </form>
+          {this.state.displayGraph && <ThreeDayForecast />}
         </div>
       </div>
     );
