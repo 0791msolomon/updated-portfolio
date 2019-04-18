@@ -86,9 +86,11 @@ class Navbar extends Component {
               Random small projects
             </button>
             <div className="dropdown-menu dropdown-menu-right">
-              <button className="dropdown-item" type="button">
-                Higher - Lower
-              </button>
+              <Link to="/higherlower">
+                <button className="dropdown-item" type="button">
+                  Higher - Lower
+                </button>
+              </Link>
               <button className="dropdown-item" type="button">
                 Love Calculator
               </button>

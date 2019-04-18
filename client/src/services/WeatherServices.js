@@ -2,9 +2,13 @@ import axios from "axios";
 let baseUrl = process.env.REACT_APP_BASEURL || "";
 baseUrl += "/api";
 
-export const forecast = async zip => {
-  console.log(process.env.REACT_APP_WEATHER_API_KEY);
-  return process.env.REACT_APP_WEATHER_API_KEY;
+export const forecast = async (zip, unit) => {
+  let response = await axios.get(
+    `http://api.openweathermap.org/data/2.5/forecast?zip=${zip},us&units=${unit}&APPID=${
+      process.env.REACT_APP_WEATHER_API_KEY
+    }`
+  );
+  return response;
 };
 
 const responseError = error => {

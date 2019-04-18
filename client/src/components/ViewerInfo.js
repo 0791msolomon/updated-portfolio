@@ -71,7 +71,7 @@ class ViewerInfo extends React.Component {
           <div
             // className="col-lg-6 col-sm-12"
             style={{
-              border: "solid 1px black",
+              border: "solid 3px black",
               padding: "3% 1% 1% 1%",
               marginBottom: "3%"
             }}

@@ -16,16 +16,6 @@ const ThreeDayForecast = props => {
       }
     ]
   };
-  return (
-    <div style={{ height: "100%" }}>
-      <h2>Bar Example (custom size)</h2>
-      <Bar
-        data={data}
-        options={{
-          maintainAspectRatio: false
-        }}
-      />
-    </div>
-  );
+  return <div />;
 };
 export default ThreeDayForecast;

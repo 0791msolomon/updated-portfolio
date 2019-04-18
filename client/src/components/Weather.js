@@ -13,12 +13,9 @@ class Weather extends React.Component {
   };
   getForecast = async e => {
     e.preventDefault();
-    let response = await axios.get(
-      `http://api.openweathermap.org/data/2.5/forecast?zip=${
-        this.state.zip
-      },us&units=${this.state.unit}&APPID=${
-        process.env.REACT_APP_WEATHER_API_KEY
-      }`
+    let response = await weatherServices.forecast(
+      this.state.zip,
+      this.state.unit
     );
     let sixHourInterval = [];
     response.data.list.map((item, i) => {
