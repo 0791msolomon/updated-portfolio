@@ -64,10 +64,17 @@ class HigherLower extends React.Component {
   };
 
   submitAnswer = answer => {
-    const { clientRandomNumber, hiddenRandomNumber, high, low } = this.state;
+    const {
+      clientRandomNumber,
+      hiddenRandomNumber,
+      high,
+      low,
+      incorrectGuesses
+    } = this.state;
     if (
       (clientRandomNumber > hiddenRandomNumber && answer === "higher") ||
-      (clientRandomNumber < hiddenRandomNumber && answer === "lower")
+      (clientRandomNumber < hiddenRandomNumber && answer === "lower") ||
+      clientRandomNumber === hiddenRandomNumber
     ) {
       this.setState({
         correctGuesses: (this.state.correctGuesses += 1),
@@ -75,11 +82,24 @@ class HigherLower extends React.Component {
         hiddenRandomNumber: _.random(Number(low), Number(high))
       });
     } else {
-      this.setState({
-        incorrectGuesses: (this.state.incorrectGuesses += 1),
-        clientRandomNumber: _.random(Number(low), Number(high)),
-        hiddenRandomNumber: _.random(Number(low), Number(high))
-      });
+      this.setState(
+        {
+          incorrectGuesses: (this.state.incorrectGuesses += 1),
+          clientRandomNumber: _.random(Number(low), Number(high)),
+          hiddenRandomNumber: _.random(Number(low), Number(high))
+        },
+        () => {
+          if (incorrectGuesses === 10) {
+            alert("you lost buddy");
+            this.setState({
+              high: null,
+              low: null,
+              numbersEntered: false,
+              incorrectGuesses: 0
+            });
+          }
+        }
+      );
     }
   };
   render() {

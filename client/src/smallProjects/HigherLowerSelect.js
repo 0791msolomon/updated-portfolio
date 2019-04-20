@@ -14,17 +14,18 @@ const HigherLowerSelect = props => {
     ));
   };
   const submitGuess = value => {
-    if (props.hiddenNumber > props.clientNumber && value === "higher") {
+    if (
+      (props.hiddenNumber < props.clientNumber && value === "higher") ||
+      (props.hiddenNumber > props.clientNumber && value === "lower") ||
+      props.hiddenNumber === props.clientNumber
+    ) {
       alert.success("That's correct!", { timeout: 1000 });
     } else {
       alert.error("Wrong!", { timeout: 1000 });
     }
     props.click(value);
   };
-  // hiddenNumber={hiddenRandomNumber}
-  // clientNumber={clientRandomNumber}
-  // click={this.submitAnswer}
-  // wrong={incorrectGuesses}
+
   return (
     <div className="col-12" style={{ marginBottom: "2%" }}>
       <div className=" highlowselectcontainer">
@@ -40,8 +41,9 @@ const HigherLowerSelect = props => {
           style={{ display: "flex", flexDirection: "column" }}
         >
           <h1 class="display-4">{props.clientNumber}</h1>
+
           <h4 class="display-6">
-            Do you think this is Higher or Lower than the hidden number?
+            Is this higher or lower number than the next number?
           </h4>
         </div>
         <button
