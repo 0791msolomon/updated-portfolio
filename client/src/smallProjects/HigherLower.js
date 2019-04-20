@@ -1,17 +1,9 @@
 import React from "react";
 import Input from "./HighLowInputs";
 import HigherLowerSelect from "./HigherLowerSelect";
-import { positions, Provider } from "react-alert";
-import AlertTemplate from "react-alert-template-basic";
-import { useAlert } from "react-alert";
 
 import _ from "underscore";
 import "./index.css";
-
-const options = {
-  timeout: 5000,
-  position: positions.BOTTOM_CENTER
-};
 
 class HigherLower extends React.Component {
   state = {
@@ -83,7 +75,6 @@ class HigherLower extends React.Component {
         hiddenRandomNumber: _.random(Number(low), Number(high))
       });
     } else {
-      alert.error("wrong");
       this.setState({
         incorrectGuesses: (this.state.incorrectGuesses += 1),
         clientRandomNumber: _.random(Number(low), Number(high)),
@@ -93,6 +84,7 @@ class HigherLower extends React.Component {
   };
   render() {
     const {
+      hiddenRandomNumber,
       numbersEntered,
       errors,
       clientRandomNumber,
@@ -100,68 +92,67 @@ class HigherLower extends React.Component {
     } = this.state;
     return (
       <React.Fragment>
-        <Provider template={AlertTemplate} {...options}>
-          <div className="higherLowerContainer ">
-            <h1 class="display-1">Higher or lower?</h1>
-            <blockquote class="blockquote text-center">
-              <p class="mb-0">
-                {`Set a high number limit & a low number limit, then when a number is displayed guess if the number shown is higher or lower than the hidden number`}
-              </p>
+        <div className="higherLowerContainer ">
+          <h1 class="display-1">Higher or lower?</h1>
+          <blockquote class="blockquote text-center">
+            <p class="mb-0">
+              {`Set a high number limit & a low number limit, then when a number is displayed guess if the number shown is higher or lower than the hidden number`}
+            </p>
 
-              <footer class="blockquote-footer">
-                Rules Are <i className="fa fa-arrow-circle-down  " />
-                <ul style={{ listStyle: "none" }}>
-                  <li>
-                    Make sure high and low are at least 10 apart or it's no fun
-                  </li>
-                  <li>Don't go above 500 for high number</li>
-                  <li>Don't go below -500 for low number</li>
-                  <li>You go until you get 10 wrong</li>
-                  <li>Wrong guesses will be displayed on bottom</li>
-                </ul>
-              </footer>
-            </blockquote>
+            <footer class="blockquote-footer">
+              Rules Are <i className="fa fa-arrow-circle-down  " />
+              <ul style={{ listStyle: "none" }}>
+                <li>
+                  Make sure high and low are at least 10 apart or it's no fun
+                </li>
+                <li>Don't go above 500 for high number</li>
+                <li>Don't go below -500 for low number</li>
+                <li>You go until you get 10 wrong</li>
+                <li>Wrong guesses will be displayed on bottom</li>
+              </ul>
+            </footer>
+          </blockquote>
 
-            <form className="inputContainer col-6">
-              <Input
-                name="low"
-                value={this.state.low}
-                placeholder="Low Limit"
-                errors={errors.low}
-                onChange={this.onChange}
+          <form className="inputContainer col-6">
+            <Input
+              name="low"
+              value={this.state.low}
+              placeholder="Low Limit"
+              errors={errors.low}
+              onChange={this.onChange}
+            />
+            <Input
+              name="high"
+              value={this.state.high}
+              placeholder="High Limit"
+              errors={errors.high}
+              onChange={this.onChange}
+            />
+            <button
+              onClick={this.setLimits}
+              className=" inputNumber form-control btn-success"
+            >
+              Set Limits
+            </button>
+          </form>
+          {numbersEntered ? (
+            <div
+              style={{
+                marginTop: "3%",
+                height: "100%",
+                width: "100%",
+                textAlign: "center"
+              }}
+            >
+              <HigherLowerSelect
+                hiddenNumber={hiddenRandomNumber}
+                clientNumber={clientRandomNumber}
+                click={this.submitAnswer}
+                wrong={incorrectGuesses}
               />
-              <Input
-                name="high"
-                value={this.state.high}
-                placeholder="High Limit"
-                errors={errors.high}
-                onChange={this.onChange}
-              />
-              <button
-                onClick={this.setLimits}
-                className=" inputNumber form-control btn-success"
-              >
-                Set Limits
-              </button>
-            </form>
-            {numbersEntered ? (
-              <div
-                style={{
-                  marginTop: "3%",
-                  height: "100%",
-                  width: "100%",
-                  textAlign: "center"
-                }}
-              >
-                <HigherLowerSelect
-                  clientNumber={clientRandomNumber}
-                  click={this.submitAnswer}
-                  wrong={incorrectGuesses}
-                />
-              </div>
-            ) : null}
-          </div>
-        </Provider>
+            </div>
+          ) : null}
+        </div>
       </React.Fragment>
     );
   }

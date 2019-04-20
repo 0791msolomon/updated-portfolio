@@ -1,6 +1,9 @@
 import React from "react";
+import { useAlert } from "react-alert";
 
 const HigherLowerSelect = props => {
+  const alert = useAlert();
+
   const displayErrors = () => {
     return [...Array(props.wrong)].map((e, i) => (
       <i
@@ -10,13 +13,25 @@ const HigherLowerSelect = props => {
       />
     ));
   };
+  const submitGuess = value => {
+    if (props.hiddenNumber > props.clientNumber && value === "higher") {
+      alert.success("That's correct!", { timeout: 1000 });
+    } else {
+      alert.error("Wrong!", { timeout: 1000 });
+    }
+    props.click(value);
+  };
+  // hiddenNumber={hiddenRandomNumber}
+  // clientNumber={clientRandomNumber}
+  // click={this.submitAnswer}
+  // wrong={incorrectGuesses}
   return (
     <div className="col-12" style={{ marginBottom: "2%" }}>
       <div className=" highlowselectcontainer">
         <button
           className="arrowOptions col-lg-3 col-sm-12 btn-success"
           style={{ alignSelf: "center" }}
-          onClick={() => props.click("higher")}
+          onClick={() => submitGuess("higher")}
         >
           <i className="fa fa-arrow-circle-up fa-5x" />
         </button>
@@ -32,7 +47,7 @@ const HigherLowerSelect = props => {
         <button
           className="arrowOptions col-lg-3 col-sm-12 btn-danger"
           style={{ alignSelf: "center" }}
-          onClick={() => props.click("lower")}
+          onClick={() => submitGuess("lower")}
         >
           <i className="fa fa-arrow-circle-down fa-5x " />
         </button>
