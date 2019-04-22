@@ -5,7 +5,12 @@ import moment from "moment";
 import axios from "axios";
 import ThreeDayForecast from "./charts/ThreeDayForecast";
 class Weather extends React.Component {
-  state = { zip: "", unit: "imperial", displayGraph: false };
+  state = {
+    zip: "",
+    unit: "imperial",
+    displayGraph: false,
+    sixHourInterval: []
+  };
   onChange = e => {
     this.setState({
       [e.target.name]: e.target.value
@@ -18,15 +23,30 @@ class Weather extends React.Component {
       this.state.unit
     );
     let sixHourInterval = [];
-    response.data.list.map((item, i) => {
-      if (i === 0 || i % 2 === 0) {
-        sixHourInterval.push(item);
+    for (let i = 0; i < response.data.list.length; i++) {
+      if (
+        !sixHourInterval.includes(
+          moment(response.data.list[i].dt_txt).format("dddd")
+        )
+      ) {
+        sixHourInterval.push(
+          response.data.list[i],
+          moment(response.data.list[i].dt_txt).format("dddd")
+        );
+      }
+    }
+    let arr = [];
+    sixHourInterval.map(item => {
+      if (typeof item === "object") {
+        arr.push({
+          temp: item.main.temp,
+          humidity: item.main.humidity,
+          time: moment(item.dt_txt).format("lll")
+        });
       }
     });
-    sixHourInterval.map(item => {
-      console.log(item);
-    });
-    this.setState({ displayGraph: true });
+    console.log(arr);
+    this.setState({ displayGraph: true, sixHourInterval: arr });
   };
   render() {
     return (
@@ -63,7 +83,9 @@ class Weather extends React.Component {
               Gather Weather Data
             </button>
           </form>
-          {this.state.displayGraph && <ThreeDayForecast />}
+          {this.state.displayGraph && (
+            <ThreeDayForecast info={this.state.sixHourInterval} />
+          )}
         </div>
       </div>
     );

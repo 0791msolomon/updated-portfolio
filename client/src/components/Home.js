@@ -6,8 +6,8 @@ class Home extends Component {
     this.state = {};
   }
   getApi = async () => {
-    let response = await axios.get("/api/todo");
-    console.log(response);
+    // let response = await axios.get("/api/todo");
+    // console.log(response);
   };
   render() {
     return (

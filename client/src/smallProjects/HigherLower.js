@@ -90,12 +90,14 @@ class HigherLower extends React.Component {
         },
         () => {
           if (incorrectGuesses === 10) {
-            alert("you lost buddy");
+            alert(`You had ${this.state.correctGuesses} correct guesses`);
             this.setState({
               high: null,
               low: null,
               numbersEntered: false,
-              incorrectGuesses: 0
+              incorrectGuesses: 0,
+              high: 0,
+              low: 0
             });
           }
         }
