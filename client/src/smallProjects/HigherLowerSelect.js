@@ -4,9 +4,7 @@ import classnames from "classnames";
 import "./index.css";
 const HigherLowerSelect = props => {
   const alert = useAlert();
-  if (props.gameOver) {
-    console.log("its over");
-  }
+
   const displayErrors = () => {
     return [...Array(props.wrong)].map((e, i) => (
       <i

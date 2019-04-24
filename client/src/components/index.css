@@ -21,6 +21,8 @@
   -webkit-animation: heartBeat 1s;
   animation: heartBeat 1s;
   color: red;
+  animation-iteration-count: infinite;
+
 }
 .whiteFont {
   color: "white";

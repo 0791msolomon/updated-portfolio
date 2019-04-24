@@ -1,9 +1,9 @@
 import React from "react";
 import Input from "./HighLowInputs";
 import HigherLowerSelect from "./HigherLowerSelect";
-
 import _ from "underscore";
 import "./index.css";
+import Modal from "react-awesome-modal";
 
 class HigherLower extends React.Component {
   state = {
@@ -87,27 +87,24 @@ class HigherLower extends React.Component {
         sendCompletionMessage: true
       });
     } else {
-      this.setState(
-        {
-          incorrectGuesses: (this.state.incorrectGuesses += 1),
-          clientRandomNumber: _.random(Number(low), Number(high)),
-          hiddenRandomNumber: _.random(Number(low), Number(high))
-        }
-        // () => {
-        //   if (incorrectGuesses === 10) {
-        //     alert(`You had ${this.state.correctGuesses} correct guesses`);
-        //     this.setState({
-        //       high: null,
-        //       low: null,
-        //       numbersEntered: false,
-        //       incorrectGuesses: 0,
-        //       high: 0,
-        //       low: 0
-        //     });
-        //   }
-        // }
-      );
+      this.setState({
+        incorrectGuesses: (this.state.incorrectGuesses += 1),
+        clientRandomNumber: _.random(Number(low), Number(high)),
+        hiddenRandomNumber: _.random(Number(low), Number(high))
+      });
     }
+  };
+  closeModal = () => {
+    this.setState({
+      high: null,
+      low: null,
+      numbersEntered: false,
+      incorrectGuesses: 0,
+      correctGuesses: 0,
+      high: 0,
+      low: 0,
+      sendCompletionMessage: false
+    });
   };
   render() {
     const {
@@ -138,12 +135,20 @@ class HigherLower extends React.Component {
               </span>
               <ul style={popWhite}>
                 <li>
-                  Make sure high and low are at least 10 apart or it's no fun
+                  - Make sure High number and low Number are at least 10 apart
                 </li>
-                <li>Don't go above 500 for high number</li>
-                <li>Don't go below -500 for low number</li>
-                <li>You go until you get 10 wrong</li>
-                <li>Wrong guesses will be displayed on bottom</li>
+
+                <li>
+                  - Select whether you think the next hidden number is higher or
+                  lower than the displayed number
+                </li>
+                <li>
+                  - Wrong guesses will be displayed on bottom in the form of X
+                </li>
+                <li>
+                  - Correct guesses will be tracked beneath incorrect count
+                </li>
+                <li>- Guess Until you get 10 wrong</li>
               </ul>
             </footer>
           </blockquote>
@@ -185,11 +190,39 @@ class HigherLower extends React.Component {
                 click={this.submitAnswer}
                 wrong={incorrectGuesses}
                 correct={correctGuesses}
-                gameOver={sendCompletionMessage}
+                // gameOver={sendCompletionMessage}
               />
             </div>
           ) : null}
         </div>
+        <Modal
+          visible={this.state.sendCompletionMessage}
+          effect="fadeInUp"
+          onClickAway={() => this.closeModal()}
+        >
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              margin: "3%"
+            }}
+          >
+            <h4
+              style={{
+                alignContent: "center",
+                alignSelf: "center",
+                alignItems: "center"
+              }}
+            >{`Not bad, you had ${
+              this.state.correctGuesses
+            } correct guesses`}</h4>
+            <h5>The score will automatically reset so you can try again</h5>
+            <button className="btn-danger" onClick={() => this.closeModal()}>
+              Close
+            </button>
+          </div>
+        </Modal>
       </React.Fragment>
     );
   }
