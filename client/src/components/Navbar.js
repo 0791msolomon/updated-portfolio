@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "./index.css";
 class Navbar extends Component {
   constructor(props) {
     super(props);
@@ -8,108 +9,98 @@ class Navbar extends Component {
   render() {
     return (
       <React.Fragment>
-        <nav
-          className="navbar navbar-expand-lg navbar-dark bg-dark"
-          style={{ marginTop: "3%" }}
-        >
-          <h1 style={{ color: "white", marginRight: "1%" }}>Navbar</h1>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarColor02"
-            aria-controls="navbarColor02"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon" />
-          </button>
-
-          <div className="collapse navbar-collapse" id="navbarColor02">
-            <ul className="navbar-nav mr-auto">
-              <li className="nav-item active">
-                <Link to="/">
-                  <h3
-                    className="nav-link"
-                    data-toggle="tooltip"
-                    data-placement="auto"
-                    title="Tooltip on top"
-                  >
-                    <i className="fa fa-home" /> Home
-                  </h3>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/about">
-                  <h3
-                    className="nav-link"
-                    data-toggle="tooltip"
-                    data-placement="auto"
-                    title="Tooltip on top"
-                  >
-                    <i className="fa fa-question" /> About
-                  </h3>
-                </Link>
-              </li>
-              <li className="nav-item active">
-                <Link to="/params/">
-                  <h3
-                    className="nav-link"
-                    data-toggle="tooltip"
-                    data-placement="auto"
-                    title="Tooltip on top"
-                  >
-                    <i className="fa fa-home" /> Params
-                  </h3>
-                </Link>
-              </li>
-              <li className="nav-item active">
-                <Link to="/weather">
-                  <h3
-                    className="nav-link"
-                    data-toggle="tooltip"
-                    data-placement="auto"
-                    title="Tooltip on top"
-                  >
-                    <i className="fa fa-bolt" /> Weather
-                  </h3>
-                </Link>
-              </li>
-            </ul>
+        <div style={{ display: "flex", flexDirection: "row" }}>
+          <Link to="/">
             <button
+              className="dropdown-item"
               type="button"
-              className="btn btn-secondary dropdown-toggle"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
+              style={{ color: "white" }}
             >
-              Random small projects
+              Home
             </button>
-            <div className="dropdown-menu dropdown-menu-right">
-              <Link to="/higherlower">
-                <button className="dropdown-item" type="button">
-                  Higher - Lower
-                </button>
-              </Link>
-              <button className="dropdown-item" type="button">
-                Love Calculator
-              </button>
-              <button className="dropdown-item" type="button">
-                To do List
-              </button>
-              <button className="dropdown-item" type="button">
-                Voting (using Redux)
-              </button>
-
-              <button className="dropdown-item" type="button">
-                Web Scraper
-              </button>
-              <button className="dropdown-item" type="button">
-                Calculator
-              </button>
-            </div>
-          </div>
-        </nav>
+          </Link>
+          <Link to="/about">
+            <button
+              className="dropdown-item"
+              type="button"
+              style={{ color: "white" }}
+            >
+              About
+            </button>
+          </Link>
+          <Link to="/params/">
+            <button
+              className="dropdown-item"
+              type="button"
+              style={{ color: "white" }}
+            >
+              Params
+            </button>
+          </Link>
+          <Link to="/weather">
+            <button
+              className="dropdown-item"
+              type="button"
+              style={{ color: "white" }}
+            >
+              Weather
+            </button>
+          </Link>
+          <Link to="/higherlower">
+            <button
+              className="dropdown-item"
+              type="button"
+              style={{ color: "white" }}
+            >
+              Higher - Lower
+            </button>
+          </Link>{" "}
+          <Link to="/">
+            <button
+              className="dropdown-item"
+              type="button"
+              style={{ color: "white" }}
+            >
+              Home
+            </button>
+          </Link>
+          <Link to="/about">
+            <button
+              className="dropdown-item"
+              type="button"
+              style={{ color: "white" }}
+            >
+              About
+            </button>
+          </Link>
+          <Link to="/params/">
+            <button
+              className="dropdown-item"
+              type="button"
+              style={{ color: "white" }}
+            >
+              Params
+            </button>
+          </Link>
+          <Link to="/weather">
+            <button
+              className="dropdown-item"
+              type="button"
+              style={{ color: "white" }}
+            >
+              Weather
+            </button>
+          </Link>
+          <Link to="/higherlower">
+            <button
+              className="dropdown-item"
+              type="button"
+              style={{ color: "white" }}
+            >
+              Higher - Lower
+            </button>
+          </Link>
+        </div>
       </React.Fragment>
     );
   }

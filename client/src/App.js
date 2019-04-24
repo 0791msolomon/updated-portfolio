@@ -6,6 +6,7 @@ import ViewerInfo from "./components/ViewerInfo";
 import Contact from "./components/Contact";
 import { transitions, positions, Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
+import AppBox from "./components/AppBox";
 import "./App.css";
 class App extends Component {
   render() {
@@ -18,19 +19,27 @@ class App extends Component {
       transition: transitions.SCALE
     };
     return (
-      <div style={{ height: "100%" }}>
+      <div className="parallax">
         <AlertProvider template={AlertTemplate} {...options}>
           <Router>
-            <Navbar />
+            <div className="parallax">
+              <AppBox />
+            </div>
+            {/* <AlertProvider template={AlertTemplate} {...options}>
+             <Navbar />
             <div className="routeContainer">
               <Routes />
-              <div className="col-xl-4  rightSideBar">
-                <ViewerInfo />
-                <Contact />
-              </div>
+             
+            </div>
+         
+        </AlertProvider> */}
+            <div className="parallax">
+              <ViewerInfo />
+            </div>
+            <div className="parallax">
+              <Contact />
             </div>
           </Router>
-          <hr className="my-4" />
         </AlertProvider>
       </div>
     );

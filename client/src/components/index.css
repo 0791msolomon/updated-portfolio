@@ -4,6 +4,9 @@
 .fa-linkedin-square {
   color: #4875b4;
 }
+.fa-github-square {
+  color: lightgrey;
+}
 .weatherForecast {
   display: flex;
   flex-direction: column;
@@ -13,4 +16,9 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+}
+.iconHover:hover {
+  -webkit-animation: heartBeat 1s;
+  animation: heartBeat 1s;
+  color: red;
 }

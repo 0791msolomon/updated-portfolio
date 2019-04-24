@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import TextInputGroup from "./TextInputGroup";
 import validator from "validator";
-
 class ViewerInfo extends React.Component {
   constructor(props) {
     super(props);
@@ -65,18 +64,26 @@ class ViewerInfo extends React.Component {
           style={{
             display: "flex",
             flexWrap: "wrap",
-            justifyContent: "center"
+            justifyContent: "center",
+            color: "white",
+            fontWeight: "bold"
           }}
         >
           <div
-            // className="col-lg-6 col-sm-12"
+            className="col-6"
             style={{
-              border: "solid 3px black",
-              padding: "3% 1% 1% 1%",
-              marginBottom: "3%"
+              border: "solid 3px white",
+              padding: "3% 1% 1% 1%"
             }}
           >
-            <h3 style={{ display: "flex", textAlign: "center" }}>
+            <h3
+              style={{
+                display: "flex",
+                textAlign: "center",
+                color: "white",
+                fontWeight: "bold"
+              }}
+            >
               If you'd like to get in touch leave your information and I'll get
               back to you as soon as possible
             </h3>
@@ -107,7 +114,7 @@ class ViewerInfo extends React.Component {
               />
               <div className="form-group">
                 <button
-                  className="btn-success form-control"
+                  className="btn-info form-control"
                   onClick={this.sendInfo}
                 >
                   <h3 style={{ display: "flex", justifyContent: "center" }}>
@@ -117,7 +124,7 @@ class ViewerInfo extends React.Component {
               </div>
               <div className="form-group">
                 <button
-                  className="btn-warning form-control"
+                  className="btn-danger form-control"
                   onClick={this.clearForm}
                 >
                   <h3 style={{ display: "flex", justifyContent: "center" }}>
