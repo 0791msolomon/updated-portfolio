@@ -62,49 +62,74 @@ class Weather extends React.Component {
     return (
       <div
         className=" weatherForecast  "
+        style={{ display: "flex", flexDirection: "column" }}
         // style={{ border: "solid 3px white", padding: "5% 10% 25% 10%" }}
       >
         <h1
           className="display-2 lead weatherDisplayFallDown"
-          style={{ color: "#0AA7F6" }}
+          style={{ color: "#0AA7F6", alignSelf: "center" }}
         >
           Weather Forecast
         </h1>
-        <div className="display-4 text-center weatherFadeInUp" style={popWhite}>
+        <h4
+          className="weatherFadeInUp"
+          style={{ color: "white", fontWeight: "bold", alignSelf: "center" }}
+        >
+          - Results will give data on the temperature and humidity levels over
+          the next 5 days
+        </h4>
+        <h4
+          className="weatherFadeInUp"
+          style={{ color: "white", fontWeight: "bold", alignSelf: "center" }}
+        >
+          - Results also display temperature and humidity averages over the
+          course of the 5 day period.
+        </h4>
+        <h4
+          className="weatherFadeInUp"
+          style={{ color: "white", fontWeight: "bold", alignSelf: "center" }}
+        >
+          - Submit button will only be enabled once 5 digit zip code is entered
+        </h4>
+        <h4
+          className="weatherFadeInUp"
+          style={{ color: "white", fontWeight: "bold", alignSelf: "center" }}
+        >
+          - If entered zip code does not return any data you will be notified.
+        </h4>
+        <div
+          className="display-4 text-center weatherFadeInUp"
+          style={{ color: "white", fontWeight: "bold", alignSelf: "center" }}
+        >
           Enter in the 5 digit zip code for any area you'd like to see
         </div>
-        <div style={{ flexDirection: "column" }} className="weatherFadeInUp">
-          <div
-            // className="col-lg-3 col-sm-12"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              flexWrap: "wrap"
-            }}
-          >
-            <form onSubmit={this.getForecast}>
-              <input
-                type="number"
-                value={this.state.zip}
-                name="zip"
-                onChange={this.onChange}
-                placeholder={`ZIP`}
-                className="form-control weatherFadeInUp3 "
-              />
-              <br />
-              <button
-                disabled={this.state.zip.length < 5}
-                btn-info
-                className={classnames("form-control  weatherFadeInUp4", {
-                  "btn-info": this.state.zip.length === 5,
-                  "btn-default": this.state.zip.length !== 5
-                })}
-                onClick={this.getForecast}
-              >
-                Gather Weather Data
-              </button>
-            </form>
-          </div>
+        <div style={{ alignSelf: "center" }} className="weatherFadeInUp col-6">
+          <form onSubmit={this.getForecast}>
+            <input
+              type="number"
+              value={this.state.zip}
+              name="zip"
+              onChange={this.onChange}
+              placeholder={`ZIP`}
+              className="form-control weatherFadeInUp3 "
+            />
+            <br />
+            <button
+              disabled={this.state.zip.length < 5}
+              btn-info
+              className={classnames("form-control weatherFadeInUp4", {
+                "btn-info": this.state.zip.length === 5,
+                "btn-default": this.state.zip.length !== 5
+              })}
+              onClick={this.getForecast}
+            >
+              Gather Weather Data
+            </button>
+          </form>
+          <br />
+          <br />
+        </div>
+        <div className="col-9" style={{ alignSelf: "center" }}>
           {this.state.displayGraph && (
             <ThreeDayForecast info={this.state.sixHourInterval} />
           )}
@@ -118,5 +143,7 @@ const popWhite = {
   color: "white",
   fontWeight: "bold"
 };
-
+const center = {
+  alignSelf: "center"
+};
 export default Weather;

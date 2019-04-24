@@ -16,7 +16,8 @@ class AppBox extends React.Component {
             flexDirection: "column",
             textAlign: "center",
             float: "center",
-            marginTop: "3%"
+            paddingTop: "5%"
+            // marginTop: "3%"
           }}
         >
           <NavBar />

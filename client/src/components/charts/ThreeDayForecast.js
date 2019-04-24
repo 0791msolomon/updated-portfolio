@@ -47,7 +47,10 @@ const ThreeDayForecast = props => {
   let avgTemp = totalTemp / degrees.length;
 
   return (
-    <div className="weatherFadeInUp2">
+    <div
+      className="weatherFadeInUp2"
+      style={{ border: "solid 3px white", padding: "3%" }}
+    >
       <div>
         <Bar
           data={tempData}

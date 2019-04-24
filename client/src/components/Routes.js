@@ -5,13 +5,15 @@ import About from "./About";
 import NotFound from "./NotFound";
 import Params from "./Params";
 import Weather from "./Weather";
+import TodoList from "./TodoList.js";
 import HigherLower from "../smallProjects/HigherLower";
 const Routes = props => {
   return (
     <div className="container">
       <div style={{ marginTop: "5%" }}>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={HigherLower} />
+          <Route path="/todo" component={TodoList} />
           <Route path="/about" component={About} />
           <Route path="/params/:name" component={Params} />
           <Route path="/weather" component={Weather} />

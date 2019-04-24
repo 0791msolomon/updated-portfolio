@@ -30,7 +30,7 @@ body html {
   background-image: url("https://www.nps.gov/shen/learn/nature/images/20170922_BigMeadows_Night_DSC5591_mo.jpg");
   color: black;
   /* Full height */
-  height: 100%;
+  height: 100vh;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;

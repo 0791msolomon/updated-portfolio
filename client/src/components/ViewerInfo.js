@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import TextInputGroup from "./TextInputGroup";
 import validator from "validator";
+import Contact from "./Contact";
 class ViewerInfo extends React.Component {
   constructor(props) {
     super(props);
@@ -135,6 +136,10 @@ class ViewerInfo extends React.Component {
             </form>
           </div>
         </div>
+        <br />
+        <br />
+        <br />
+        <Contact />
       </React.Fragment>
     );
   }

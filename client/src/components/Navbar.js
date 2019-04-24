@@ -16,7 +16,16 @@ class Navbar extends Component {
               type="button"
               style={{ color: "white" }}
             >
-              <h1>Home</h1>
+              <h1>Higher-Lower</h1>
+            </button>
+          </Link>
+          <Link to="/todo">
+            <button
+              className="dropdown-item"
+              type="button"
+              style={{ color: "white" }}
+            >
+              <h1>Task List</h1>
             </button>
           </Link>
           <Link to="/params/">
@@ -37,15 +46,6 @@ class Navbar extends Component {
               <h1>Weather forecast</h1>
             </button>
           </Link>
-          <Link to="/higherlower">
-            <button
-              className="dropdown-item"
-              type="button"
-              style={{ color: "white" }}
-            >
-              <h1>Higher-Lower</h1>
-            </button>
-          </Link>{" "}
         </div>
       </React.Fragment>
     );

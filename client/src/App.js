@@ -8,6 +8,7 @@ import AlertTemplate from "react-alert-template-basic";
 import AppBox from "./components/AppBox";
 import Routes from "./components/Routes";
 import About from "./components/About";
+import Technologies from "./components/Technologies";
 import "./App.css";
 class App extends Component {
   render() {
@@ -23,26 +24,22 @@ class App extends Component {
       <div className="parallax">
         <AlertProvider template={AlertTemplate} {...options}>
           <Router>
-            <div
-              className="container"
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between"
-              }}
-            >
+            <div className="container parallax">
               <AppBox />
               <Routes />
             </div>
-            {/* <div className="parallaxJr" /> */}
-            <div className="parallax">
+            <div className="  parallax">
               <About />
             </div>
             <div className="parallax">
-              <ViewerInfo />
-              <br />
-              <Contact />
+              <Technologies />
             </div>
+            <div className="parallax">
+              <ViewerInfo />
+            </div>
+            {/* <div className="parallax">
+              <Contact />
+            </div> */}
             <div />
           </Router>
         </AlertProvider>
