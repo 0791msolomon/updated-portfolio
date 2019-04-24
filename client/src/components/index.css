@@ -54,3 +54,36 @@
   animation: lightSpeedIn 1s;
   animation-iteration-count: 1;
 }
+.weatherDisplayFallDown{
+  -webkit-animation: fadeInDown 1s;
+  animation: fadeInDown 1s;
+  animation-iteration-count: 1;
+}
+.weatherFadeInUp{
+  -webkit-animation: fadeInUp 1s;
+  animation: fadeInUp 1s;
+  animation-iteration-count: 1;
+}
+.weatherFadeInUp2{
+  -webkit-animation: fadeInUpBig 1s;
+  animation: fadeInUpBig 1s;
+  animation-iteration-count: 1;
+}
+.weatherFadeInUp3{
+  -webkit-animation: fadeInUp 2s;
+  animation: fadeInUp 2s;
+  animation-iteration-count: 1;
+}
+.weatherFadeInUp4{
+  -webkit-animation: fadeInUp 3s;
+  animation: fadeInUp 3s;
+  animation-iteration-count: 1;
+}
+.aboutMeDisplay {
+  -webkit-animation: rotateInUpRight 1s;
+  animation: rotateInUpRight 1s;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+}
+
+ 

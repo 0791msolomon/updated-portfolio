@@ -16,16 +16,7 @@ class Navbar extends Component {
               type="button"
               style={{ color: "white" }}
             >
-              Home
-            </button>
-          </Link>
-          <Link to="/about">
-            <button
-              className="dropdown-item"
-              type="button"
-              style={{ color: "white" }}
-            >
-              About
+              <h1>Home</h1>
             </button>
           </Link>
           <Link to="/params/">
@@ -34,7 +25,7 @@ class Navbar extends Component {
               type="button"
               style={{ color: "white" }}
             >
-              Params
+              <h1>Params</h1>
             </button>
           </Link>
           <Link to="/weather">
@@ -43,7 +34,7 @@ class Navbar extends Component {
               type="button"
               style={{ color: "white" }}
             >
-              Weather
+              <h1>Weather forecast</h1>
             </button>
           </Link>
           <Link to="/higherlower">
@@ -52,54 +43,9 @@ class Navbar extends Component {
               type="button"
               style={{ color: "white" }}
             >
-              Higher - Lower
+              <h1>Higher-Lower</h1>
             </button>
           </Link>{" "}
-          <Link to="/">
-            <button
-              className="dropdown-item"
-              type="button"
-              style={{ color: "white" }}
-            >
-              Home
-            </button>
-          </Link>
-          <Link to="/about">
-            <button
-              className="dropdown-item"
-              type="button"
-              style={{ color: "white" }}
-            >
-              About
-            </button>
-          </Link>
-          <Link to="/params/">
-            <button
-              className="dropdown-item"
-              type="button"
-              style={{ color: "white" }}
-            >
-              Params
-            </button>
-          </Link>
-          <Link to="/weather">
-            <button
-              className="dropdown-item"
-              type="button"
-              style={{ color: "white" }}
-            >
-              Weather
-            </button>
-          </Link>
-          <Link to="/higherlower">
-            <button
-              className="dropdown-item"
-              type="button"
-              style={{ color: "white" }}
-            >
-              Higher - Lower
-            </button>
-          </Link>
         </div>
       </React.Fragment>
     );

@@ -7,7 +7,7 @@ import { transitions, positions, Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 import AppBox from "./components/AppBox";
 import Routes from "./components/Routes";
-
+import About from "./components/About";
 import "./App.css";
 class App extends Component {
   render() {
@@ -34,12 +34,10 @@ class App extends Component {
               <AppBox />
               <Routes />
             </div>
-            <div className="parallaxJr" />
-            {/* <div className="parallax">
-              <Routes />
-            </div> */}
             {/* <div className="parallaxJr" /> */}
-
+            <div className="parallax">
+              <About />
+            </div>
             <div className="parallax">
               <ViewerInfo />
               <br />

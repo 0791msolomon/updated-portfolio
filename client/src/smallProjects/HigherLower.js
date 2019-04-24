@@ -129,26 +129,37 @@ class HigherLower extends React.Component {
             </p>
 
             <footer className="blockquote-footer higherLowerRollIn2">
-              <span style={popWhite}>
-                Rules Are
-                <i className="fa fa-arrow-circle-down  " />
+              <span>
+                <h2 style={popWhite}>
+                  Rules Are <i className="fa fa-arrow-circle-down  " />
+                </h2>
               </span>
-              <ul style={popWhite}>
+              <ul>
                 <li>
-                  - Make sure High number and low Number are at least 10 apart
+                  <h3 style={popWhite}>
+                    - Make sure High number and low Number are at least 10 apart
+                  </h3>
                 </li>
 
                 <li>
-                  - Select whether you think the next hidden number is higher or
-                  lower than the displayed number
+                  <h3 style={popWhite}>
+                    - Select whether you think the next hidden number is higher
+                    or lower than the displayed number
+                  </h3>
                 </li>
                 <li>
-                  - Wrong guesses will be displayed on bottom in the form of X
+                  <h3 style={popWhite}>
+                    - Wrong guesses will be displayed on bottom in the form of X
+                  </h3>
                 </li>
                 <li>
-                  - Correct guesses will be tracked beneath incorrect count
+                  <h3 style={popWhite}>
+                    - Correct guesses will be tracked beneath incorrect count
+                  </h3>
                 </li>
-                <li>- Guess Until you get 10 wrong</li>
+                <li>
+                  <h3 style={popWhite}>- Guess Until you get 10 wrong</h3>
+                </li>
               </ul>
             </footer>
           </blockquote>
