@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import Navbar from "./components/Navbar";
-import Routes from "./components/Routes";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ViewerInfo from "./components/ViewerInfo";
 import Contact from "./components/Contact";
 import { transitions, positions, Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 import AppBox from "./components/AppBox";
+import Routes from "./components/Routes";
+
 import "./App.css";
 class App extends Component {
   render() {
@@ -22,17 +23,14 @@ class App extends Component {
       <div className="parallax">
         <AlertProvider template={AlertTemplate} {...options}>
           <Router>
+            <AppBox />
             <div className="parallax">
-              <AppBox />
-            </div>
-            {/* <AlertProvider template={AlertTemplate} {...options}>
-             <Navbar />
-            <div className="routeContainer">
               <Routes />
-             
             </div>
-         
-        </AlertProvider> */}
+            <div className="parallaxJr" />
+            {/* <div>
+              <Routes />
+            </div> */}
             <div className="parallax">
               <ViewerInfo />
             </div>

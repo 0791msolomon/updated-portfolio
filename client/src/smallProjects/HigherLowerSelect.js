@@ -9,7 +9,7 @@ const HigherLowerSelect = props => {
       <i
         key={i}
         className="col-xl-1 col-md-3 col-sm-4 col-xs-6  fa fa-close fa-3x"
-        style={{ color: "red" }}
+        style={{ color: "white" }}
       />
     ));
   };
@@ -20,8 +20,6 @@ const HigherLowerSelect = props => {
       props.hiddenNumber === props.clientNumber
     ) {
       alert.success("That's correct!", { timeout: 1000 });
-    } else {
-      alert.error("Wrong!", { timeout: 1000 });
     }
     props.click(value);
   };

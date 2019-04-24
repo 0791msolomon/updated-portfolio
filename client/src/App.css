@@ -38,3 +38,15 @@ body html {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.parallaxJr {
+  background-image: url("https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/JHPSVGEDC7.jpg");
+  color: black;
+  /* Full height */
+  height: 20%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

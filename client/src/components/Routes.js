@@ -8,10 +8,7 @@ import Weather from "./Weather";
 import HigherLower from "../smallProjects/HigherLower";
 const Routes = props => {
   return (
-    <div
-      className="col-xl-7 col-lg-11  col-md-11  rounded"
-      style={{ backgroundColor: "lightGrey", margin: "0% 0% 3% 0%" }}
-    >
+    <div className="container">
       <div style={{ marginTop: "5%" }}>
         <Switch>
           <Route exact path="/" component={Home} />

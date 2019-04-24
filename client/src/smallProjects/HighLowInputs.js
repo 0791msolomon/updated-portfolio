@@ -15,7 +15,14 @@ const HighLowInputs = props => {
         style={{ textAlign: "center" }}
         onChange={e => props.onChange(e)}
       />
-      {props.errors && <div className="invalid-feedback">{props.errors}</div>}
+      {props.errors && (
+        <div
+          className="invalid-feedback"
+          style={{ color: "white", fontWeight: "bold" }}
+        >
+          {props.errors}
+        </div>
+      )}
     </div>
   );
 };

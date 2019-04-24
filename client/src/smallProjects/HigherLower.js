@@ -114,16 +114,21 @@ class HigherLower extends React.Component {
     } = this.state;
     return (
       <React.Fragment>
-        <div className="higherLowerContainer ">
+        <div
+          className="higherLowerContainer  "
+          style={{ color: "white", fontWeight: "bold" }}
+        >
           <h1 class="display-1">Higher or lower?</h1>
-          <blockquote class="blockquote text-center">
+          <blockquote className="blockquote text-center">
             <p class="mb-0">
               {`Set a high number limit & a low number limit, then when a number is displayed guess if the number shown is higher or lower than the hidden number`}
             </p>
 
             <footer class="blockquote-footer">
-              Rules Are <i className="fa fa-arrow-circle-down  " />
-              <ul style={{ listStyle: "none" }}>
+              <span style={popWhite}>
+                Rules Are <i className="fa fa-arrow-circle-down  " />
+              </span>
+              <ul style={popWhite}>
                 <li>
                   Make sure high and low are at least 10 apart or it's no fun
                 </li>
@@ -179,5 +184,10 @@ class HigherLower extends React.Component {
     );
   }
 }
+const popWhite = {
+  color: "white",
+  fontWeight: "bold",
+  listStyle: "none"
+};
 
 export default HigherLower;

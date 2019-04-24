@@ -3,6 +3,7 @@ import classnames from "classnames";
 import * as weatherServices from "../services/WeatherServices";
 import moment from "moment";
 import axios from "axios";
+import "./index.css";
 import ThreeDayForecast from "./charts/ThreeDayForecast";
 class Weather extends React.Component {
   state = {
@@ -50,7 +51,7 @@ class Weather extends React.Component {
   };
   render() {
     return (
-      <div className="container weatherForecast  ">
+      <div className=" weatherForecast  ">
         <h1 className="display-2 lead " style={{ color: "#0AA7F6" }}>
           Weather Forecast
         </h1>
@@ -91,5 +92,9 @@ class Weather extends React.Component {
     );
   }
 }
+const popWhite = {
+  color: "white",
+  fontWeight: "bold"
+};
 
 export default Weather;

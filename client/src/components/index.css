@@ -22,3 +22,7 @@
   animation: heartBeat 1s;
   color: red;
 }
+.whiteFont {
+  color: "white";
+  font-weight: bold;
+}
