@@ -23,20 +23,29 @@ class App extends Component {
       <div className="parallax">
         <AlertProvider template={AlertTemplate} {...options}>
           <Router>
-            <AppBox />
-            <div className="parallax">
+            <div
+              className="container"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between"
+              }}
+            >
+              <AppBox />
               <Routes />
             </div>
             <div className="parallaxJr" />
-            {/* <div>
+            {/* <div className="parallax">
               <Routes />
             </div> */}
+            {/* <div className="parallaxJr" /> */}
+
             <div className="parallax">
               <ViewerInfo />
-            </div>
-            <div className="parallax">
+              <br />
               <Contact />
             </div>
+            <div />
           </Router>
         </AlertProvider>
       </div>

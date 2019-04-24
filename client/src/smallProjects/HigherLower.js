@@ -14,7 +14,8 @@ class HigherLower extends React.Component {
     clientRandomNumber: null,
     hiddenRandomNumber: null,
     incorrectGuesses: 0,
-    correctGuesses: 0
+    correctGuesses: 0,
+    sendCompletionMessage: false
   };
   onChange = e => {
     e.preventDefault();
@@ -76,10 +77,14 @@ class HigherLower extends React.Component {
       (clientRandomNumber < hiddenRandomNumber && answer === "lower") ||
       clientRandomNumber === hiddenRandomNumber
     ) {
-      this.setState({
+      return this.setState({
         correctGuesses: (this.state.correctGuesses += 1),
         clientRandomNumber: _.random(Number(low), Number(high)),
         hiddenRandomNumber: _.random(Number(low), Number(high))
+      });
+    } else if (incorrectGuesses === 9) {
+      return this.setState({
+        sendCompletionMessage: true
       });
     } else {
       this.setState(
@@ -87,20 +92,20 @@ class HigherLower extends React.Component {
           incorrectGuesses: (this.state.incorrectGuesses += 1),
           clientRandomNumber: _.random(Number(low), Number(high)),
           hiddenRandomNumber: _.random(Number(low), Number(high))
-        },
-        () => {
-          if (incorrectGuesses === 10) {
-            alert(`You had ${this.state.correctGuesses} correct guesses`);
-            this.setState({
-              high: null,
-              low: null,
-              numbersEntered: false,
-              incorrectGuesses: 0,
-              high: 0,
-              low: 0
-            });
-          }
         }
+        // () => {
+        //   if (incorrectGuesses === 10) {
+        //     alert(`You had ${this.state.correctGuesses} correct guesses`);
+        //     this.setState({
+        //       high: null,
+        //       low: null,
+        //       numbersEntered: false,
+        //       incorrectGuesses: 0,
+        //       high: 0,
+        //       low: 0
+        //     });
+        //   }
+        // }
       );
     }
   };
@@ -110,7 +115,9 @@ class HigherLower extends React.Component {
       numbersEntered,
       errors,
       clientRandomNumber,
-      incorrectGuesses
+      incorrectGuesses,
+      correctGuesses,
+      sendCompletionMessage
     } = this.state;
     return (
       <React.Fragment>
@@ -118,15 +125,16 @@ class HigherLower extends React.Component {
           className="higherLowerContainer  "
           style={{ color: "white", fontWeight: "bold" }}
         >
-          <h1 class="display-1">Higher or lower?</h1>
+          <h1 className="display-1 higherLowerDisplay">Higher or lower?</h1>
           <blockquote className="blockquote text-center">
-            <p class="mb-0">
+            <p className="mb-0 higherLowerRollIn ">
               {`Set a high number limit & a low number limit, then when a number is displayed guess if the number shown is higher or lower than the hidden number`}
             </p>
 
-            <footer class="blockquote-footer">
+            <footer className="blockquote-footer higherLowerRollIn2">
               <span style={popWhite}>
-                Rules Are <i className="fa fa-arrow-circle-down  " />
+                Rules Are
+                <i className="fa fa-arrow-circle-down  " />
               </span>
               <ul style={popWhite}>
                 <li>
@@ -176,6 +184,8 @@ class HigherLower extends React.Component {
                 clientNumber={clientRandomNumber}
                 click={this.submitAnswer}
                 wrong={incorrectGuesses}
+                correct={correctGuesses}
+                gameOver={sendCompletionMessage}
               />
             </div>
           ) : null}

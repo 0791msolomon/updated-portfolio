@@ -1,5 +1,5 @@
 .fa-facebook-square {
-  color: #3b5998;
+  color: #1b5998;
 }
 .fa-linkedin-square {
   color: #4875b4;
@@ -25,4 +25,30 @@
 .whiteFont {
   color: "white";
   font-weight: bold;
+}
+
+.higherLowerDisplay {
+   -webkit-animation: jackInTheBox 1s;
+  animation: jackInTheBox 1s;
+  animation-iteration-count: 1;
+}
+.higherLowerRollIn{
+  -webkit-animation: rollIn 2s;
+  animation: rollIn 2s;
+  animation-iteration-count: 1;
+}
+.higherLowerRollIn2 {
+  -webkit-animation: rollIn 3s;
+  animation: rollIn 3s;
+  animation-iteration-count: 1;
+}
+.numberBounceIn {
+  -webkit-animation: zoomIn 1s;
+  animation: zoomIn 1s;
+  animation-iteration-count: 1;
+}
+.correctCount {
+  -webkit-animation: lightSpeedIn 1s;
+  animation: lightSpeedIn 1s;
+  animation-iteration-count: 1;
 }
