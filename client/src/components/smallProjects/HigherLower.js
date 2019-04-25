@@ -134,7 +134,7 @@ class HigherLower extends React.Component {
                   Rules Are <i className="fa fa-arrow-circle-down  " />
                 </h2>
               </span>
-              <ul>
+              <ul style={{ listStyle: "none" }}>
                 <li>
                   <h3 style={popWhite}>
                     - Make sure High number and low Number are at least 10 apart
@@ -163,8 +163,7 @@ class HigherLower extends React.Component {
               </ul>
             </footer>
           </blockquote>
-
-          <form className="inputContainer col-6">
+          <form className="inputContainer col-lg-6 col-sm-12">
             <Input
               name="low"
               value={this.state.low}
@@ -181,7 +180,7 @@ class HigherLower extends React.Component {
             />
             <button
               onClick={this.setLimits}
-              className=" inputNumber form-control btn-success"
+              className=" inputNumber form-control btn-success  "
             >
               Set Limits
             </button>

@@ -7,22 +7,17 @@ class AppBox extends React.Component {
   state = {};
   render() {
     return (
-      <React.Fragment>
-        <div
-          className="container col-10"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: "column",
-            textAlign: "center",
-            float: "center",
-            paddingTop: "5%"
-            // marginTop: "3%"
-          }}
-        >
-          <NavBar />
-        </div>
-      </React.Fragment>
+      <div
+        className=" col-10"
+        style={{
+          display: "flex",
+          justifyContent: "center"
+
+          // marginTop: "3%"
+        }}
+      >
+        <NavBar />
+      </div>
     );
   }
 }

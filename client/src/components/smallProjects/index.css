@@ -7,11 +7,8 @@
     flex-direction: column
 }
 .inputContainer{
-    display: flex;
-    flex-direction: column;
-
-    justify-content: space-evenly
-}
+  
+ }
 .inputNumber{
     margin-top: 3%;
  }

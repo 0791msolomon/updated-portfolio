@@ -26,7 +26,7 @@ const HigherLowerSelect = props => {
     props.click(value);
   };
   return (
-    <div className="col-12" style={{ marginBottom: "2%" }}>
+    <div style={{ marginBottom: "2%" }}>
       <div className=" highlowselectcontainer">
         <button
           className="arrowOptions col-lg-3 col-sm-12 btn-success"

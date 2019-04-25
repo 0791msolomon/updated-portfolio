@@ -21,26 +21,60 @@ class App extends Component {
       transition: transitions.SCALE
     };
     return (
+      // <div style={{ height: "100%" }}>
       <div className="parallax">
         <AlertProvider template={AlertTemplate} {...options}>
           <Router>
-            <div className="container parallax">
-              <AppBox />
-              <Routes />
-            </div>
-            <div className="  parallax">
-              <About />
-            </div>
-            <div className="parallax">
-              <Technologies />
-            </div>
-            <div className="parallax">
-              <ViewerInfo />
-            </div>
-            {/* <div className="parallax">
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-evenly"
+              }}
+            >
+              <div
+                style={{
+                  background: (0, 151, 19, 0.1),
+                  paddingBottom: "3%",
+                  alignSelf: "center"
+                }}
+                className="col-12"
+              >
+                <Navbar />
+                <Routes />
+              </div>
+              <div
+                style={{
+                  background: (0, 151, 19, 0.1),
+                  paddingBottom: "3%"
+                }}
+                className="col-12"
+              >
+                <About />
+              </div>
+              <div
+                style={{
+                  background: (0, 151, 19, 0.1),
+                  paddingBottom: "3%"
+                }}
+                className="col-12"
+              >
+                <Technologies />
+              </div>
+              <div
+                style={{
+                  background: (0, 151, 19, 0.1),
+                  paddingBottom: "3%"
+                }}
+                className="col-12"
+              >
+                <ViewerInfo />
+              </div>
+              {/* <div className="parallax">
               <Contact />
             </div> */}
-            <div />
+              <div />
+            </div>
           </Router>
         </AlertProvider>
       </div>

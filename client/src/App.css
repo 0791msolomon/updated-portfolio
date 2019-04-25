@@ -1,42 +1,19 @@
-.App {
-  text-align: center;
-}
-body html {
+ 
+/* body html {
   height: 100%;
-}
-.routeContainer {
-  margin: 5%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-.rightSideBar {
-  margin: 0%, 3%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+  width: 100%
+} */
+ 
 .parallax {
   /* The image used */
   background-image: url("https://www.nps.gov/shen/learn/nature/images/20170922_BigMeadows_Night_DSC5591_mo.jpg");
-  color: black;
-  /* Full height */
-  height: 100vh;
 
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+
+ min-height: 100%;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+background-size: cover
 }
 .parallaxJr {
   background-image: url("https://www.nps.gov/shen/learn/nature/images/20170922_BigMeadows_Night_DSC5591_mo.jpg");

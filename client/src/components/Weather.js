@@ -63,45 +63,44 @@ class Weather extends React.Component {
       <div
         className=" weatherForecast  "
         style={{ display: "flex", flexDirection: "column" }}
-        // style={{ border: "solid 3px white", padding: "5% 10% 25% 10%" }}
       >
         <h1
-          className="display-2 lead weatherDisplayFallDown"
+          className="display-3 lead weatherDisplayFallDown"
           style={{ color: "#0AA7F6", alignSelf: "center" }}
         >
           Weather Forecast
         </h1>
-        <h4
+        <h6
           className="weatherFadeInUp"
           style={{ color: "white", fontWeight: "bold", alignSelf: "center" }}
         >
           - Results will give data on the temperature and humidity levels over
           the next 5 days
-        </h4>
-        <h4
+        </h6>
+        <h6
           className="weatherFadeInUp"
           style={{ color: "white", fontWeight: "bold", alignSelf: "center" }}
         >
           - Results also display temperature and humidity averages over the
           course of the 5 day period.
-        </h4>
-        <h4
+        </h6>
+        <h6
           className="weatherFadeInUp"
           style={{ color: "white", fontWeight: "bold", alignSelf: "center" }}
         >
           - Submit button will only be enabled once 5 digit zip code is entered
-        </h4>
-        <h4
+        </h6>
+        <h6
           className="weatherFadeInUp"
           style={{ color: "white", fontWeight: "bold", alignSelf: "center" }}
         >
           - If entered zip code does not return any data you will be notified.
-        </h4>
+        </h6>
         <div
-          className="display-4 text-center weatherFadeInUp"
+          className="  text-center weatherFadeInUp"
           style={{ color: "white", fontWeight: "bold", alignSelf: "center" }}
         >
-          Enter in the 5 digit zip code for any area you'd like to see
+          <h1> Enter in the 5 digit zip code for any area you'd like to see</h1>
         </div>
         <div style={{ alignSelf: "center" }} className="weatherFadeInUp col-6">
           <form onSubmit={this.getForecast}>
@@ -129,7 +128,7 @@ class Weather extends React.Component {
           <br />
           <br />
         </div>
-        <div className="col-9" style={{ alignSelf: "center" }}>
+        <div className="col-lg-9 col-sm-12" style={{ alignSelf: "center" }}>
           {this.state.displayGraph && (
             <ThreeDayForecast info={this.state.sixHourInterval} />
           )}

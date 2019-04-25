@@ -2,173 +2,163 @@ import React from "react";
 import "./index.css";
 const Technologies = props => {
   return (
-    <React.Fragment>
+    <div style={{ display: "flex", flexDirection: "column" }}>
+      <div style={{ color: "white", fontWeight: "bold", alignSelf: "center" }}>
+        <h1>Here are some of the technologies that I use.</h1>
+      </div>
       <div
         style={{
-          opacity: ".8",
-          height: "100%",
+          width: "100%",
           display: "flex",
-          alignContent: "center",
-          alignItems: "center",
-          justifyContent: "center",
-          flexDirection: "column"
+          flexDirection: "row",
+          flexWrap: "wrap",
+          justifyContent: "center"
         }}
       >
-        <div className="display-1   " style={popWhite}>
-          <span>Here are some of the technologies that I use.</span>
+        <div className="col-lg-3 col-md-12" id="frontendParent">
+          <h2
+            style={{
+              color: "#ff2647",
+              fontWeight: "bold",
+              alignSelf: "center"
+            }}
+          >
+            Front End
+          </h2>
+          <div id="hover-content">
+            <ul
+              style={{
+                listStyle: "none",
+                display: "flex",
+                flexDirection: "column",
+                alignSelf: "center"
+              }}
+            >
+              <li>
+                <h4 style={{ color: "white", fontWeight: "bold" }}>
+                  JavaScript
+                </h4>
+              </li>
+              <li>
+                <h4 style={{ color: "white", fontWeight: "bold" }}>React.js</h4>
+              </li>
+              <li>
+                <h4 style={{ color: "white", fontWeight: "bold" }}>Redux</h4>
+              </li>
+              <li>
+                <h4 style={{ color: "white", fontWeight: "bold" }}>jQuery</h4>
+              </li>
+              <li>
+                <h4 style={{ color: "white", fontWeight: "bold" }}>CSS3</h4>
+              </li>
+              <li>
+                <h4 style={{ color: "white", fontWeight: "bold" }}>
+                  Twitter Bootstrap
+                </h4>
+              </li>
+              <li>
+                <h4 style={{ color: "white", fontWeight: "bold" }}>HTML5</h4>
+              </li>
+              <li>
+                <h4 style={{ color: "white", fontWeight: "bold" }}>AJAX</h4>
+              </li>
+              <li>
+                <h4 style={{ color: "white", fontWeight: "bold" }}>
+                  Material-UI
+                </h4>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div
-          style={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "row",
-            flexWrap: "wrap",
-            justifyContent: "space-evenly"
-          }}
-        >
-          <div id="frontendParent">
-            <h1
-              className="display-4"
-              style={{ color: "#ff2647", fontWeight: "bold" }}
+        <div className="col-lg-3 col-md-12" id="backendParent">
+          <h2 style={{ color: "#ff8026", fontWeight: "bold" }}>Middle Tier</h2>
+          <div id="hover-content">
+            <ul
+              style={{
+                listStyle: "none",
+                display: "flex",
+                flexDirection: "column",
+                alignSelf: "center"
+              }}
             >
-              Front End
-            </h1>
-            <div id="hover-content">
-              <ul style={{ listStyle: "none" }}>
-                <li>
-                  <h1 style={{ color: "white", fontWeight: "bold" }}>
-                    JavaScript
-                  </h1>
-                </li>
-                <li>
-                  <h1 style={{ color: "white", fontWeight: "bold" }}>
-                    React.js
-                  </h1>
-                </li>
-                <li>
-                  <h1 style={{ color: "white", fontWeight: "bold" }}>Redux</h1>
-                </li>
-                <li>
-                  <h1 style={{ color: "white", fontWeight: "bold" }}>jQuery</h1>
-                </li>
-                <li>
-                  <h1 style={{ color: "white", fontWeight: "bold" }}>CSS3</h1>
-                </li>
-                <li>
-                  <h1 style={{ color: "white", fontWeight: "bold" }}>
-                    Twitter Bootstrap
-                  </h1>
-                </li>
-                <li>
-                  <h1 style={{ color: "white", fontWeight: "bold" }}>HTML5</h1>
-                </li>
-                <li>
-                  <h1 style={{ color: "white", fontWeight: "bold" }}>AJAX</h1>
-                </li>
-                <li>
-                  <h1 style={{ color: "white", fontWeight: "bold" }}>
-                    Material-UI
-                  </h1>
-                </li>
-              </ul>
-            </div>
+              <li>
+                <h4 style={{ color: "white", fontWeight: "bold" }}>Node.js</h4>
+              </li>
+              <li>
+                <h4 style={{ color: "white", fontWeight: "bold" }}>
+                  ExpressJS
+                </h4>
+              </li>
+            </ul>
           </div>
-          <div id="backendParent">
-            <h1
-              className="display-4"
-              style={{ color: "#ff8026", fontWeight: "bold" }}
+        </div>
+        <div className="col-lg-3 col-md-12" id="middletierParent">
+          <h2 style={{ color: "#2667ff", fontWeight: "bold" }}>Backend</h2>
+          <div id="hover-content">
+            <ul
+              style={{
+                listStyle: "none",
+                display: "flex",
+                flexDirection: "column",
+                alignSelf: "center"
+              }}
             >
-              Middle Tier
-            </h1>
-            <div id="hover-content">
-              <ul style={{ listStyle: "none" }}>
-                <li>
-                  <h1 style={{ color: "white", fontWeight: "bold" }}>
-                    Node.js
-                  </h1>
-                </li>
-                <li>
-                  <h1 style={{ color: "white", fontWeight: "bold" }}>
-                    ExpressJS
-                  </h1>
-                </li>
-              </ul>
-            </div>
+              <li>
+                <h4 style={{ color: "white", fontWeight: "bold" }}>MongoDB</h4>
+              </li>
+              <li>
+                <h4 style={{ color: "white", fontWeight: "bold" }}>Firebase</h4>
+              </li>
+            </ul>
           </div>
-          <div id="middletierParent">
-            <h1
-              className="display-4"
-              style={{ color: "#2667ff", fontWeight: "bold" }}
+        </div>
+        <div className="col-lg-3 col-md-12" id="otherParent">
+          <h2 style={{ color: "#47ff26", fontWeight: "bold" }}>Other</h2>
+          <div id="hover-content">
+            <ul
+              style={{
+                listStyle: "none",
+                display: "flex",
+                flexDirection: "column",
+                alignSelf: "center"
+              }}
             >
-              Backend
-            </h1>
-            <div id="hover-content">
-              <ul style={{ listStyle: "none" }}>
-                <li>
-                  <h1 style={{ color: "white", fontWeight: "bold" }}>
-                    MongoDB
-                  </h1>
-                </li>
-                <li>
-                  <h1 style={{ color: "white", fontWeight: "bold" }}>
-                    Firebase
-                  </h1>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div id="otherParent">
-            <h1
-              className="display-4"
-              style={{ color: "#47ff26", fontWeight: "bold" }}
-            >
-              Other
-            </h1>
-            <div id="hover-content">
-              <ul style={{ listStyle: "none" }}>
-                <li>
-                  <h1 style={{ color: "white", fontWeight: "bold" }}>
-                    VS Code
-                  </h1>
-                </li>
-                <li>
-                  <h1 style={{ color: "white", fontWeight: "bold" }}>
-                    Robo 3T
-                  </h1>
-                </li>
-                <li>
-                  <h1 style={{ color: "white", fontWeight: "bold" }}>
-                    Advanced REST Client
-                  </h1>
-                </li>
-                <li>
-                  <h1 style={{ color: "white", fontWeight: "bold" }}>
-                    Postman
-                  </h1>
-                </li>
-                <li>
-                  <h1 style={{ color: "white", fontWeight: "bold" }}>TFS</h1>
-                </li>
-                <li>
-                  <h1 style={{ color: "white", fontWeight: "bold" }}>Git</h1>
-                </li>
-                <li>
-                  <h1 style={{ color: "white", fontWeight: "bold" }}>Trello</h1>
-                </li>
-                <li>
-                  <h1 style={{ color: "white", fontWeight: "bold" }}>
-                    Agile/Scrum
-                  </h1>
-                </li>
-                <li>
-                  <h1 style={{ color: "white", fontWeight: "bold" }}>Heroku</h1>
-                </li>
-              </ul>
-            </div>
+              <li>
+                <h4 style={{ color: "white", fontWeight: "bold" }}>VS Code</h4>
+              </li>
+              <li>
+                <h4 style={{ color: "white", fontWeight: "bold" }}>Robo 3T</h4>
+              </li>
+              <li>
+                <h4 style={{ color: "white", fontWeight: "bold" }}>
+                  Advanced REST Client
+                </h4>
+              </li>
+              <li>
+                <h4 style={{ color: "white", fontWeight: "bold" }}>Postman</h4>
+              </li>
+              <li>
+                <h4 style={{ color: "white", fontWeight: "bold" }}>TFS</h4>
+              </li>
+              <li>
+                <h4 style={{ color: "white", fontWeight: "bold" }}>Git</h4>
+              </li>
+              <li>
+                <h4 style={{ color: "white", fontWeight: "bold" }}>Trello</h4>
+              </li>
+              <li>
+                <h4 style={{ color: "white", fontWeight: "bold" }}>
+                  Agile/Scrum
+                </h4>
+              </li>
+              <li>
+                <h4 style={{ color: "white", fontWeight: "bold" }}>Heroku</h4>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 const popWhite = {

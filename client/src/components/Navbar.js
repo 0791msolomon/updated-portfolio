@@ -8,46 +8,74 @@ class Navbar extends Component {
   }
   render() {
     return (
-      <React.Fragment>
-        <div style={{ display: "flex", flexDirection: "row" }}>
-          <Link to="/">
-            <button
-              className="dropdown-item"
-              type="button"
-              style={{ color: "white" }}
-            >
-              <h1>Higher-Lower</h1>
-            </button>
-          </Link>
-          <Link to="/todo">
-            <button
-              className="dropdown-item"
-              type="button"
-              style={{ color: "white" }}
-            >
-              <h1>Task List</h1>
-            </button>
-          </Link>
-          <Link to="/params/">
-            <button
-              className="dropdown-item"
-              type="button"
-              style={{ color: "white" }}
-            >
-              <h1>Params</h1>
-            </button>
-          </Link>
-          <Link to="/weather">
-            <button
-              className="dropdown-item"
-              type="button"
-              style={{ color: "white" }}
-            >
-              <h1>Weather forecast</h1>
-            </button>
-          </Link>
+      <nav
+        class="navbar navbar-expand-lg   navbar-dark bg-dark"
+        style={{ padding: "0%", margin: "0%" }}
+      >
+        <a class="navbar-brand" href="#">
+          Navbar
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon" />
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item  ">
+              <Link to="/">
+                <button
+                  className="dropdown-item"
+                  type="button"
+                  // style={{ color: "white" }}
+                >
+                  <p>Higher-Lower</p>
+                </button>
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link to="/todo">
+                <button
+                  className="dropdown-item"
+                  type="button"
+                  // style={{ color: "white" }}
+                >
+                  <p>Task List</p>
+                </button>
+              </Link>
+            </li>
+            <li class="nav-item dropdown">
+              <Link to="/params/">
+                <button
+                  className="dropdown-item"
+                  type="button"
+                  // style={{ color: "white" }}
+                >
+                  <p>Params</p>
+                </button>
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link to="/weather">
+                <button
+                  className="dropdown-item"
+                  type="button"
+                  // style={{ color: "white" }}
+                >
+                  <p>Weather forecast</p>
+                </button>
+              </Link>
+            </li>
+          </ul>
         </div>
-      </React.Fragment>
+      </nav>
     );
   }
 }

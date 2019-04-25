@@ -6,11 +6,11 @@ import NotFound from "./NotFound";
 import Params from "./Params";
 import Weather from "./Weather";
 import TodoList from "./TodoList.js";
-import HigherLower from "../smallProjects/HigherLower";
+import HigherLower from "./smallProjects/HigherLower";
 const Routes = props => {
   return (
     <div className="container">
-      <div style={{ marginTop: "5%" }}>
+      <div style={{ marginTop: "5%", padding: "0%" }}>
         <Switch>
           <Route exact path="/" component={HigherLower} />
           <Route path="/todo" component={TodoList} />

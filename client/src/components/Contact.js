@@ -6,7 +6,7 @@ const Contact = props => {
       className="container"
       style={{ display: "flex", justifyContent: "center" }}
     >
-      <div style={{ border: "solid 3px white" }} className="col-6">
+      <div style={{ border: "solid 3px white" }} className="col-lg-6 col-sm-12">
         <h1 className="display-4" style={popFont}>
           Click these links if you'd like to connect
         </h1>

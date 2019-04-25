@@ -6,14 +6,15 @@ const About = props => {
       <div
         className="container"
         style={{
-          height: "100%",
           display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
           justifyContent: "center",
           alignItems: "center"
         }}
       >
         <div className="display-2 aboutMeDisplay" style={popWhite}>
-          Quick Bio
+          About me
         </div>
         <div
           className="container"
