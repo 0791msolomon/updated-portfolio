@@ -6,7 +6,10 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
 const mongo = require("mongodb").MongoClient;
-const url = process.env.REACT_APP_MONGOURL || "mongodb://localhost:27017";
+const url =
+  process.env.MONGODB_URI ||
+  process.env.REACT_APP_MONGOURL ||
+  "mongodb://localhost:27017";
 const port = process.env.PORT || 5000;
 const weatherApi = process.env.REACT_APP_WEATHER_API_KEY;
 // app.use(cors);
