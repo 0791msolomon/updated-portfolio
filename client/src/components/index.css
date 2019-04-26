@@ -22,7 +22,6 @@
   animation: heartBeat 1s;
   color: red;
   animation-iteration-count: infinite;
-
 }
 .whiteFont {
   color: "white";
@@ -30,11 +29,11 @@
 }
 
 .higherLowerDisplay {
-   -webkit-animation: jackInTheBox 1s;
+  -webkit-animation: jackInTheBox 1s;
   animation: jackInTheBox 1s;
   animation-iteration-count: 1;
 }
-.higherLowerRollIn{
+.higherLowerRollIn {
   -webkit-animation: rollIn 2s;
   animation: rollIn 2s;
   animation-iteration-count: 1;
@@ -54,97 +53,100 @@
   animation: lightSpeedIn 1s;
   animation-iteration-count: 1;
 }
-.weatherDisplayFallDown{
+.weatherDisplayFallDown {
   -webkit-animation: fadeInDown 1s;
   animation: fadeInDown 1s;
   animation-iteration-count: 1;
 }
-.weatherFadeInUp{
+.weatherFadeInUp {
   -webkit-animation: fadeInUp 1s;
   animation: fadeInUp 1s;
   animation-iteration-count: 1;
 }
-.weatherFadeInUp2{
+.weatherFadeInUp2 {
   -webkit-animation: fadeInUpBig 1s;
   animation: fadeInUpBig 1s;
   animation-iteration-count: 1;
 }
-.weatherFadeInUp3{
+.weatherFadeInUp3 {
   -webkit-animation: fadeInUp 2s;
   animation: fadeInUp 2s;
   animation-iteration-count: 1;
 }
-.weatherFadeInUp4{
+.weatherFadeInUp4 {
   -webkit-animation: fadeInUp 3s;
   animation: fadeInUp 3s;
   animation-iteration-count: 1;
 }
-.aboutMeDisplay {
-  -webkit-animation: rotateInUpRight 1s;
-  animation: rotateInUpRight 1s;
-  animation-duration: 3s;
-  animation-iteration-count: 1;
+
+.shit {
+  border-radius: 20% 20%;
+  border: solid 2px white;
+  padding: 2%;
+  color: white;
+  transition: 1s;
+  display: "flex";
+}
+
+.shit:hover {
+  color: lime;
+  border: solid 2px lime;
 }
 .techDisplay:hover {
   -webkit-animation: heartBeat 1s;
   animation: heartBeat 1s;
   color: red;
   animation-iteration-count: infinite;
-
 }
 #hover-content {
-  opacity:0;   
-  -webkit-transition:.5s;
-  -moz-transition:.5s;
-  -o-transition:.5s;
-  -ms-transition:.5s;
-  transition:.5s;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  transition: 0.5s;
 }
-
 
 #frontendParent:hover {
   -webkit-animation: tada 1s;
   animation: tada 1s;
-   animation-iteration-count: 1;
+  animation-iteration-count: 1;
 }
 #middletierParent:hover {
   -webkit-animation: tada 1s;
   animation: tada 1s;
-   animation-iteration-count: 1;
+  animation-iteration-count: 1;
 }
 #backendParent:hover {
   -webkit-animation: tada 1s;
   animation: tada 1s;
-   animation-iteration-count: 1;
+  animation-iteration-count: 1;
 }
 #otherParent:hover {
   -webkit-animation: tada 1s;
   animation: tada 1s;
-   animation-iteration-count: 1;
+  animation-iteration-count: 1;
 }
 #frontendParent:hover #hover-content {
-  opacity:1;
+  opacity: 1;
 }
 #middletierParent:hover #hover-content {
-  opacity:1;
+  opacity: 1;
 }
 
 #backendParent:hover #hover-content {
-  opacity:1;
+  opacity: 1;
 }
 
 #otherParent:hover #hover-content {
-  opacity:1;
+  opacity: 1;
 }
-
-
 
 #contactme {
   background-color: black;
   color: white;
   height: 180px;
 }
-
 
 #navbar {
   position: relative;
@@ -166,7 +168,6 @@ h1.headingStatement {
   font-size: 2em;
 }
 
-
 /* bootstrap override */
 
 a.btn-primary:hover {
@@ -174,8 +175,8 @@ a.btn-primary:hover {
 }
 
 .navbar-nav li a:hover {
-    background-color: #FF0000;
-    border-radius: 10px;
+  background-color: #ff0000;
+  border-radius: 10px;
 }
 .navbar-toggle .icon-bar {
   display: block;

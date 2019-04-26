@@ -27,6 +27,7 @@ class Weather extends React.Component {
         this.state.zip,
         this.state.unit
       );
+      console.log(response.data);
       let sixHourInterval = [];
       for (let i = 0; i < response.data.list.length; i++) {
         if (
@@ -58,6 +59,7 @@ class Weather extends React.Component {
       });
     }
   };
+
   render() {
     return (
       <div
@@ -70,36 +72,21 @@ class Weather extends React.Component {
         >
           Weather Forecast
         </h1>
-        <h6
-          className="weatherFadeInUp"
-          style={{ color: "white", fontWeight: "bold", alignSelf: "center" }}
-        >
+        <h6 className="weatherFadeInUp" style={gameRules}>
           - Results will give data on the temperature and humidity levels over
           the next 5 days
         </h6>
-        <h6
-          className="weatherFadeInUp"
-          style={{ color: "white", fontWeight: "bold", alignSelf: "center" }}
-        >
+        <h6 className="weatherFadeInUp" style={gameRules}>
           - Results also display temperature and humidity averages over the
           course of the 5 day period.
         </h6>
-        <h6
-          className="weatherFadeInUp"
-          style={{ color: "white", fontWeight: "bold", alignSelf: "center" }}
-        >
+        <h6 className="weatherFadeInUp" style={gameRules}>
           - Submit button will only be enabled once 5 digit zip code is entered
         </h6>
-        <h6
-          className="weatherFadeInUp"
-          style={{ color: "white", fontWeight: "bold", alignSelf: "center" }}
-        >
+        <h6 className="weatherFadeInUp" style={gameRules}>
           - If entered zip code does not return any data you will be notified.
         </h6>
-        <div
-          className="  text-center weatherFadeInUp"
-          style={{ color: "white", fontWeight: "bold", alignSelf: "center" }}
-        >
+        <div className="  text-center weatherFadeInUp" style={gameRules}>
           <h1> Enter in the 5 digit zip code for any area you'd like to see</h1>
         </div>
         <div style={{ alignSelf: "center" }} className="weatherFadeInUp col-6">
@@ -118,7 +105,7 @@ class Weather extends React.Component {
               btn-info
               className={classnames("form-control weatherFadeInUp4", {
                 "btn-info": this.state.zip.length === 5,
-                "btn-default": this.state.zip.length !== 5
+                "btn-warning ": this.state.zip.length !== 5
               })}
               onClick={this.getForecast}
             >
@@ -144,5 +131,11 @@ const popWhite = {
 };
 const center = {
   alignSelf: "center"
+};
+const gameRules = {
+  color: "white",
+  fontWeight: "bold",
+  alignSelf: "center",
+  fontFamily: '"Times New Roman", Times, serif'
 };
 export default Weather;

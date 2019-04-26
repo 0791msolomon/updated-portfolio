@@ -28,52 +28,45 @@ class Navbar extends Component {
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item  ">
-              <Link to="/">
-                <button
-                  className="dropdown-item"
-                  type="button"
-                  // style={{ color: "white" }}
-                >
-                  <p>Higher-Lower</p>
-                </button>
-              </Link>
-            </li>
-            <li class="nav-item">
-              <Link to="/todo">
-                <button
-                  className="dropdown-item"
-                  type="button"
-                  // style={{ color: "white" }}
-                >
-                  <p>Task List</p>
-                </button>
-              </Link>
-            </li>
-            <li class="nav-item dropdown">
-              <Link to="/params/">
-                <button
-                  className="dropdown-item"
-                  type="button"
-                  // style={{ color: "white" }}
-                >
-                  <p>Params</p>
-                </button>
-              </Link>
-            </li>
-            <li class="nav-item">
-              <Link to="/weather">
-                <button
-                  className="dropdown-item"
-                  type="button"
-                  // style={{ color: "white" }}
-                >
-                  <p>Weather forecast</p>
-                </button>
-              </Link>
-            </li>
-          </ul>
+          <Link to="/">
+            <button
+              className="dropdown-item"
+              type="button"
+              style={{ color: "white" }}
+            >
+              <p>Higher-Lower</p>
+            </button>
+          </Link>
+
+          <Link to="/todo">
+            <button
+              className="dropdown-item"
+              type="button"
+              style={{ color: "white" }}
+            >
+              <p>Task List</p>
+            </button>
+          </Link>
+
+          <Link to="/params/">
+            <button
+              className="dropdown-item"
+              type="button"
+              style={{ color: "white" }}
+            >
+              <p>Params</p>
+            </button>
+          </Link>
+
+          <Link to="/weather">
+            <button
+              className="dropdown-item"
+              type="button"
+              style={{ color: "white" }}
+            >
+              <p>Weather forecast</p>
+            </button>
+          </Link>
         </div>
       </nav>
     );

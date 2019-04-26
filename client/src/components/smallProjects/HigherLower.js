@@ -240,7 +240,8 @@ class HigherLower extends React.Component {
 const popWhite = {
   color: "white",
   fontWeight: "bold",
-  listStyle: "none"
+  listStyle: "none",
+  fontFamily: '"Times New Roman", Times, serif'
 };
 
 export default HigherLower;

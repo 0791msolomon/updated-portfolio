@@ -13,15 +13,51 @@ const About = props => {
           alignItems: "center"
         }}
       >
-        <div className="display-2 aboutMeDisplay" style={popWhite}>
-          About me
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            // flexWrap: "wrap",
+            alignItems: "baseline"
+          }}
+        >
+          <i
+            className="fa fa-hand-o-right fa-2x"
+            style={{ color: "white", fontWeight: "bold" }}
+          />
+          <br />
+          <h1
+            className="shit"
+            data-toggle="collapse"
+            data-target="#collapseExample"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+          >
+            About Me
+          </h1>
+          <br />
+          <i
+            className="fa fa-hand-o-left fa-2x"
+            style={{ color: "white", fontWeight: "bold" }}
+          />
         </div>
         <div
           className="container"
-          style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}
+          style={{
+            marginTop: "2%",
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+            justifyContent: "center"
+          }}
         >
-          <div>
-            <h3 style={{ color: "white" }}>
+          <div id="collapseExample" className="collapse">
+            <h5
+              style={{
+                color: "white",
+                fontFamily: '"Courier New", Courier, monospace'
+              }}
+            >
               Hi there, here's a few things about me for anyone interested. My
               name is Matt Solomon, I'm originally from Cleveland Ohio (lived
               there until I was 18). Once I graduated from highschool I left
@@ -52,7 +88,7 @@ const About = props => {
               am always keeping my options open and plan on moving back to
               Southern California to find more challenging work and continue
               growing as a developer. That's the quick and easy for my story.
-            </h3>
+            </h5>
           </div>
         </div>
       </div>
