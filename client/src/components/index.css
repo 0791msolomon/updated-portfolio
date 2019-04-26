@@ -29,18 +29,25 @@
 }
 
 .higherLowerDisplay {
-  -webkit-animation: jackInTheBox 1s;
-  animation: jackInTheBox 1s;
-  animation-iteration-count: 1;
+     -webkit-animation: fadeInDown 1s;
+    animation: fadeInDown 1s;
+    animation-iteration-count: 1;
+  
 }
 .higherLowerRollIn {
-  -webkit-animation: rollIn 2s;
-  animation: rollIn 2s;
+  -webkit-animation: fadeInDown 1s;
+  animation: fadeInDown 1s;
   animation-iteration-count: 1;
 }
 .higherLowerRollIn2 {
-  -webkit-animation: rollIn 3s;
-  animation: rollIn 3s;
+     -webkit-animation: fadeInUp 1s;
+    animation: fadeInUp 1s;
+    animation-iteration-count: 1;
+ 
+}
+.buttonFadeUp {
+  -webkit-animation: fadeInUp 2s;
+  animation: fadeInUp 2s;
   animation-iteration-count: 1;
 }
 .numberBounceIn {

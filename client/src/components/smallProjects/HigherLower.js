@@ -136,34 +136,34 @@ class HigherLower extends React.Component {
               </span>
               <ul style={{ listStyle: "none" }}>
                 <li>
-                  <h3 style={popWhite}>
+                  <h4 style={popWhite}>
                     - Make sure High number and low Number are at least 10 apart
-                  </h3>
+                  </h4>
                 </li>
 
                 <li>
-                  <h3 style={popWhite}>
+                  <h4 style={popWhite}>
                     - Select whether you think the next hidden number is higher
                     or lower than the displayed number
-                  </h3>
+                  </h4>
                 </li>
                 <li>
-                  <h3 style={popWhite}>
+                  <h4 style={popWhite}>
                     - Wrong guesses will be displayed on bottom in the form of X
-                  </h3>
+                  </h4>
                 </li>
                 <li>
-                  <h3 style={popWhite}>
+                  <h4 style={popWhite}>
                     - Correct guesses will be tracked beneath incorrect count
-                  </h3>
+                  </h4>
                 </li>
                 <li>
-                  <h3 style={popWhite}>- Guess Until you get 10 wrong</h3>
+                  <h4 style={popWhite}>- Guess Until you get 10 wrong</h4>
                 </li>
               </ul>
             </footer>
           </blockquote>
-          <form className="inputContainer col-lg-6 col-sm-12">
+          <form className="higherLowerRollIn2 inputContainer col-lg-6 col-sm-12">
             <Input
               name="low"
               value={this.state.low}
