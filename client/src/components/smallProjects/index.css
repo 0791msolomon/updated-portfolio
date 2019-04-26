@@ -7,7 +7,9 @@
     flex-direction: column
 }
 .inputContainer{
-  
+    -webkit-animation: fadeInUp 2s;
+  animation: fadeInUp 2s;
+  animation-iteration-count: 1;
  }
 .inputNumber{
     margin-top: 3%;

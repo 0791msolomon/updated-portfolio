@@ -14,8 +14,8 @@ const Routes = props => {
       <div style={{ marginTop: "5%", padding: "0%" }}>
         <Switch>
           <Route exact path="/" component={HigherLower} />
-          <Route path="/todo" component={TodoList} />
           <Route path="/blog" component={Blog} />
+          <Route path="/todo" component={TodoList} />
           <Route path="/about" component={About} />
           <Route path="/params/:name" component={Params} />
           <Route path="/weather" component={Weather} />

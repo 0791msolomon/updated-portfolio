@@ -94,6 +94,7 @@ class Weather extends React.Component {
             <input
               type="number"
               value={this.state.zip}
+              style={{ textAlign: "center" }}
               name="zip"
               onChange={this.onChange}
               placeholder={`ZIP`}
@@ -105,7 +106,7 @@ class Weather extends React.Component {
               btn-info
               className={classnames("form-control weatherFadeInUp4", {
                 "btn-info": this.state.zip.length === 5,
-                "btn-warning ": this.state.zip.length !== 5
+                "btn-default ": this.state.zip.length !== 5
               })}
               onClick={this.getForecast}
             >

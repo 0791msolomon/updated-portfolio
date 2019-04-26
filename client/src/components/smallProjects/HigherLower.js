@@ -122,7 +122,12 @@ class HigherLower extends React.Component {
           className="higherLowerContainer  "
           style={{ color: "white", fontWeight: "bold" }}
         >
-          <h1 className="display-1 higherLowerDisplay">Higher or lower?</h1>
+          <h1
+            className="display-1 higherLowerDisplay"
+            style={{ fontFamily: '"Times New Roman", Times, serif' }}
+          >
+            Higher or lower?
+          </h1>
           <blockquote className="blockquote text-center">
             <p className="mb-0 higherLowerRollIn ">
               {`Set a high number limit & a low number limit, then when a number is displayed guess if the number shown is higher or lower than the hidden number`}

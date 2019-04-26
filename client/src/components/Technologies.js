@@ -2,20 +2,26 @@ import React from "react";
 import "./index.css";
 const Technologies = props => {
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
+    <div
+      className="container"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center"
+      }}
+    >
       <div style={{ color: "white", fontWeight: "bold", alignSelf: "center" }}>
         <h1>Here are some of the technologies that I use.</h1>
       </div>
       <div
         style={{
-          width: "100%",
+          alignSelf: "center",
           display: "flex",
           flexDirection: "row",
-          flexWrap: "wrap",
-          justifyContent: "center"
+          flexWrap: "wrap"
         }}
       >
-        <div className="col-lg-3 col-md-12" id="frontendParent">
+        <div className="col-lg-3 col-md-6 col-sm-12" id="frontendParent">
           <h2
             style={{
               color: "#ff2647",
@@ -70,7 +76,7 @@ const Technologies = props => {
             </ul>
           </div>
         </div>
-        <div className="col-lg-3 col-md-12" id="backendParent">
+        <div className="col-lg-3 col-md-6 col-sm-12" id="backendParent">
           <h2 style={{ color: "#ff8026", fontWeight: "bold" }}>Middle Tier</h2>
           <div id="hover-content">
             <ul
@@ -92,7 +98,7 @@ const Technologies = props => {
             </ul>
           </div>
         </div>
-        <div className="col-lg-3 col-md-12" id="middletierParent">
+        <div className="col-lg-3 col-md-6 col-sm-12" id="middletierParent">
           <h2 style={{ color: "#2667ff", fontWeight: "bold" }}>Backend</h2>
           <div id="hover-content">
             <ul
@@ -112,7 +118,7 @@ const Technologies = props => {
             </ul>
           </div>
         </div>
-        <div className="col-lg-3 col-md-12" id="otherParent">
+        <div className="col-lg-3 col-md-6 col-sm-12" id="otherParent">
           <h2 style={{ color: "#47ff26", fontWeight: "bold" }}>Other</h2>
           <div id="hover-content">
             <ul
