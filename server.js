@@ -36,7 +36,9 @@ mongoose.connect(url, { useNewUrlParser: true }, function(err) {
     console.log("Connected to the database");
   }
 });
-
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 app.listen(port, () => {
   console.log(`Listening on port ${port} `);
 });
