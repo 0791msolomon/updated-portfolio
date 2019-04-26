@@ -17,6 +17,10 @@
   "bugs": {
     "url": "https://github.com/0791msolomon/updated-portfolio/issues"
   },
+  "engines": {
+    "npm": "6.4.1",
+    "node": "10.15.3"
+  },
   "homepage": "https://github.com/0791msolomon/updated-portfolio#readme",
   "dependencies": {
     "axios": "^0.18.0",

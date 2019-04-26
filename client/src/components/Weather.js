@@ -103,11 +103,11 @@ class Weather extends React.Component {
             <br />
             <button
               disabled={this.state.zip.length < 5}
-              btn-info
-              className={classnames("form-control weatherFadeInUp4", {
-                "btn-info": this.state.zip.length === 5,
-                "btn-default ": this.state.zip.length !== 5
-              })}
+              className={
+                this.state.zip.length === 5
+                  ? "form-control weatherFadeInUp4 btn-info"
+                  : "form-control weatherFadeInUp4 btn-default"
+              }
               onClick={this.getForecast}
             >
               Find

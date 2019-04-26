@@ -117,20 +117,18 @@ class ViewerInfo extends React.Component {
                 <button
                   className="btn-info form-control"
                   onClick={this.sendInfo}
+                  style={{ fontWeight: "bold" }}
                 >
-                  <h3 style={{ display: "flex", justifyContent: "center" }}>
-                    Contact me!
-                  </h3>
+                  Contact me!
                 </button>
               </div>
               <div className="form-group">
                 <button
                   className="btn-danger form-control"
                   onClick={this.clearForm}
+                  style={{ fontWeight: "bold" }}
                 >
-                  <h3 style={{ display: "flex", justifyContent: "center" }}>
-                    Clear Form
-                  </h3>
+                  Clear Form
                 </button>
               </div>
             </form>

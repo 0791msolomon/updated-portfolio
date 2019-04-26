@@ -17,7 +17,6 @@ const About = props => {
           style={{
             display: "flex",
             flexDirection: "row",
-            // flexWrap: "wrap",
             alignItems: "baseline"
           }}
         >
@@ -25,7 +24,6 @@ const About = props => {
             className="fa fa-hand-o-right fa-2x"
             style={{ color: "white", fontWeight: "bold" }}
           />
-          <br />
           <h1
             className="shit"
             data-toggle="collapse"
@@ -35,7 +33,7 @@ const About = props => {
           >
             About Me
           </h1>
-          <br />
+
           <i
             className="fa fa-hand-o-left fa-2x"
             style={{ color: "white", fontWeight: "bold" }}

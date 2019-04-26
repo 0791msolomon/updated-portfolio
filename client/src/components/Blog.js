@@ -15,8 +15,20 @@ class Blog extends React.Component {
       .post("/api/blog", { title: this.state.title, body: this.state.body })
       .then(res => {
         console.log(res);
+        this.setState({ title: "", body: "" });
       })
       .catch(err => console.log(err));
+  };
+  viewAll = e => {
+    e.preventDefault();
+    axios
+      .get("/api/blog")
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   render() {
@@ -71,12 +83,28 @@ class Blog extends React.Component {
             >
               Submit Entry
             </button>
-            <button
-              className="buttonFadeUp clearbtn   form-control"
-              style={{ backgroundColor: "grey", color: "white" }}
+            <span
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                flexWrap: "wrap",
+                justifyContent: "space-around"
+              }}
             >
-              Clear form
-            </button>
+              <button
+                className="buttonFadeUp clearbtn form-control col-lg-5 col-sm-12"
+                style={{ backgroundColor: "grey", color: "white" }}
+                onClick={this.viewAll}
+              >
+                View All
+              </button>
+              <button
+                className="buttonFadeUp clearbtn form-control col-lg-5 col-sm-12"
+                style={{ backgroundColor: "grey", color: "white" }}
+              >
+                Hide All
+              </button>
+            </span>
           </div>
         </div>
       </div>

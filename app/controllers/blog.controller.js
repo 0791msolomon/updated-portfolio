@@ -8,11 +8,21 @@ const postBlog = (req, res) => {
   blog
     .save()
     .then(response => {
-      res.send(response);
+      res.status(201).send(response);
     })
     .catch(err => {
       console.log(err);
       res.status(500).send(err);
     });
 };
-module.exports = { postBlog };
+
+const getAll = (req, res) => {
+  Blog.find()
+    .then(response => {
+      res.status(200).send(response);
+    })
+    .catch(err => {
+      res.status(400).send(err);
+    });
+};
+module.exports = { postBlog, getAll };

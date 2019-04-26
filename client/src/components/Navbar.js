@@ -9,14 +9,14 @@ class Navbar extends Component {
   render() {
     return (
       <nav
-        class="navbar navbar-expand-lg   navbar-dark bg-dark"
+        className="navbar navbar-expand-lg   navbar-dark bg-dark"
         style={{ padding: "0%", margin: "0%" }}
       >
-        <a class="navbar-brand" href="#">
+        <a className="navbar-brand" href="#">
           Navbar
         </a>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
@@ -24,10 +24,10 @@ class Navbar extends Component {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon" />
+          <span className="navbar-toggler-icon" />
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <Link to="/">
             <button
               className="dropdown-item"
