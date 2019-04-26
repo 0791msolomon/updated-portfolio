@@ -57,7 +57,15 @@ class Navbar extends Component {
               <p>Params</p>
             </button>
           </Link>
-
+          <Link to="/blog">
+            <button
+              className="dropdown-item"
+              type="button"
+              style={{ color: "white" }}
+            >
+              <p>Blog</p>
+            </button>
+          </Link>
           <Link to="/weather">
             <button
               className="dropdown-item"

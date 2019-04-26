@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "./Home";
+import Blog from "./Blog";
 import About from "./About";
 import NotFound from "./NotFound";
 import Params from "./Params";
@@ -13,6 +14,7 @@ const Routes = props => {
       <div style={{ marginTop: "5%", padding: "0%" }}>
         <Switch>
           <Route exact path="/" component={HigherLower} />
+          <Route path="/blog" component={Blog} />
           <Route path="/todo" component={TodoList} />
           <Route path="/about" component={About} />
           <Route path="/params/:name" component={Params} />

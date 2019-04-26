@@ -122,7 +122,12 @@ class HigherLower extends React.Component {
           className="higherLowerContainer  "
           style={{ color: "white", fontWeight: "bold" }}
         >
-          <h1 className="display-1 higherLowerDisplay">Higher or lower?</h1>
+          <h1
+            className="display-1 higherLowerDisplay"
+            style={{ fontFamily: '"Times New Roman", Times, serif' }}
+          >
+            Higher or lower?
+          </h1>
           <blockquote className="blockquote text-center">
             <p className="mb-0 higherLowerRollIn ">
               {`Set a high number limit & a low number limit, then when a number is displayed guess if the number shown is higher or lower than the hidden number`}
@@ -136,29 +141,29 @@ class HigherLower extends React.Component {
               </span>
               <ul style={{ listStyle: "none" }}>
                 <li>
-                  <h3 style={popWhite}>
+                  <h5 style={popWhite}>
                     - Make sure High number and low Number are at least 10 apart
-                  </h3>
+                  </h5>
                 </li>
 
                 <li>
-                  <h3 style={popWhite}>
+                  <h5 style={popWhite}>
                     - Select whether you think the next hidden number is higher
                     or lower than the displayed number
-                  </h3>
+                  </h5>
                 </li>
                 <li>
-                  <h3 style={popWhite}>
+                  <h5 style={popWhite}>
                     - Wrong guesses will be displayed on bottom in the form of X
-                  </h3>
+                  </h5>
                 </li>
                 <li>
-                  <h3 style={popWhite}>
+                  <h5 style={popWhite}>
                     - Correct guesses will be tracked beneath incorrect count
-                  </h3>
+                  </h5>
                 </li>
                 <li>
-                  <h3 style={popWhite}>- Guess Until you get 10 wrong</h3>
+                  <h5 style={popWhite}>- Guess Until you get 10 wrong</h5>
                 </li>
               </ul>
             </footer>

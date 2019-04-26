@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-     "client": "cd client && npm start",
+    "client": "cd client && npm start",
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"npm server\" \"npm client\""
   },
@@ -21,9 +21,11 @@
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "i": "^0.3.6",
+    "mongoose": "^5.5.4",
     "nodemon": "^1.18.10",
     "npm": "^6.9.0"
   }

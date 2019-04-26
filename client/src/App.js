@@ -45,6 +45,7 @@ class App extends Component {
               </div>
               <div
                 style={{
+                  marginTop: "3%",
                   background: (0, 151, 19, 0.1),
                   paddingBottom: "3%"
                 }}
@@ -54,6 +55,7 @@ class App extends Component {
               </div>
               <div
                 style={{
+                  marginTop: "3%",
                   background: (0, 151, 19, 0.1),
                   paddingBottom: "3%"
                 }}
@@ -63,6 +65,7 @@ class App extends Component {
               </div>
               <div
                 style={{
+                  marginTop: "3%",
                   background: (0, 151, 19, 0.1),
                   paddingBottom: "3%"
                 }}
