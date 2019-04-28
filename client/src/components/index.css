@@ -29,10 +29,9 @@
 }
 
 .higherLowerDisplay {
-     -webkit-animation: fadeInDown 1s;
-    animation: fadeInDown 1s;
-    animation-iteration-count: 1;
-  
+  -webkit-animation: fadeInDown 1s;
+  animation: fadeInDown 1s;
+  animation-iteration-count: 1;
 }
 .higherLowerRollIn {
   -webkit-animation: fadeInDown 1s;
@@ -40,10 +39,9 @@
   animation-iteration-count: 1;
 }
 .higherLowerRollIn2 {
-     -webkit-animation: fadeInUp 1s;
-    animation: fadeInUp 1s;
-    animation-iteration-count: 1;
- 
+  -webkit-animation: fadeInUp 1s;
+  animation: fadeInUp 1s;
+  animation-iteration-count: 1;
 }
 .buttonFadeUp {
   -webkit-animation: fadeInUp 2s;
@@ -85,8 +83,11 @@
   animation: fadeInUp 3s;
   animation-iteration-count: 1;
 }
- 
 
+.aboutMePointer {
+  animation: flash 4s;
+  animation-iteration-count: infinite;
+}
 .shit {
   border-radius: 20% 20%;
   border: solid 2px white;
@@ -137,9 +138,8 @@
   animation-iteration-count: 1;
 }
 .clearbtn:hover {
-  
-    background-color:rgba(0, 0, 0, 0.1);
- }
+  background-color: rgba(0, 0, 0, 0.1);
+}
 
 /* #frontendParent:hover {
   -webkit-animation: tada 1s;
@@ -181,6 +181,3 @@
   color: white;
   height: 180px;
 }
-
- 
-

@@ -12,6 +12,10 @@ const Blog = mongoose.model("blogs", {
     required: true,
     trime: true,
     minLength: 5
+  },
+  time: {
+    type: Number,
+    required: true
   }
 });
 

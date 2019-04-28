@@ -21,7 +21,7 @@ const About = props => {
           }}
         >
           <i
-            className="fa fa-hand-o-right fa-2x"
+            className="fa aboutMePointer fa-hand-o-right fa-2x"
             style={{ color: "white", fontWeight: "bold" }}
           />
           <h1
@@ -35,7 +35,7 @@ const About = props => {
           </h1>
 
           <i
-            className="fa fa-hand-o-left fa-2x"
+            className="fa aboutMePointer fa-hand-o-left fa-2x"
             style={{ color: "white", fontWeight: "bold" }}
           />
         </div>

@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import Blog from "./Blog";
+import AllBlogs from "./AllBlogs";
 import NotFound from "./NotFound";
 import Params from "./Params";
 import Weather from "./Weather";
@@ -15,6 +16,7 @@ const Routes = props => {
         <Switch>
           <Route exact path="/" component={HigherLower} />
           <Route path="/blog" component={Blog} />
+          <Route path="/allblogs" component={AllBlogs} />
           <Route path="/todo" component={TodoList} />
           <Route path="/about" component={About} />
           <Route path="/params/:name" component={Params} />

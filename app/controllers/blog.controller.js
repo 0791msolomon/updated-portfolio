@@ -3,7 +3,8 @@ const { Blog } = require("../models/Blog");
 const postBlog = (req, res) => {
   let blog = new Blog({
     title: req.body.title,
-    body: req.body.body
+    body: req.body.body,
+    time: Date.parse(new Date())
   });
   blog
     .save()
