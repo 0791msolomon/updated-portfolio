@@ -16,6 +16,14 @@ const Blog = mongoose.model("blogs", {
   time: {
     type: Number,
     required: true
+  },
+  likes: {
+    type: Number,
+    required: false
+  },
+  replies: {
+    type: Array,
+    required: false
   }
 });
 

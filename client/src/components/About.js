@@ -32,16 +32,7 @@ const About = props => {
             aria-expanded="false"
             aria-controls="collapseExample"
           >
-            <h1
-            // className="shit"
-            // data-toggle="collapse"
-            // data-target="#collapseExample"
-            // href="#collapseExample"
-            // aria-expanded="false"
-            // aria-controls="collapseExample"
-            >
-              About Me
-            </h1>
+            <h1>About Me</h1>
           </div>
           <i
             className="fa aboutMePointer fa-hand-o-left fa-2x"
@@ -94,7 +85,7 @@ const About = props => {
               technologies whenever the opportunity presents itself, however I
               am always keeping my options open and plan on moving back to
               Southern California to find more challenging work and continue
-              growing as a developer. That's the quick and easy for my story.
+              growing as a developer.
             </h5>
           </div>
         </div>

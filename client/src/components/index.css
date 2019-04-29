@@ -33,6 +33,10 @@
   animation: fadeInDown 1s;
   animation-iteration-count: 1;
 }
+.blogsFadeInRight {
+   animation: fadeInDown 1s;
+  animation-iteration-count: 1;
+}
 .higherLowerRollIn {
   -webkit-animation: fadeInDown 1s;
   animation: fadeInDown 1s;
@@ -83,7 +87,9 @@
   animation: fadeInUp 3s;
   animation-iteration-count: 1;
 }
-
+.blogCard:hover {
+  border: solid 2px white
+}
 .aboutMePointer {
   animation: flash 4s;
   animation-iteration-count: infinite;

@@ -110,7 +110,9 @@ class Weather extends React.Component {
               }
               onClick={this.getForecast}
             >
-              Find
+              <span>
+                Find <i class="fa fa-search" />
+              </span>
             </button>
           </form>
           <br />

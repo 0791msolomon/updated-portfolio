@@ -86,7 +86,7 @@ class ViewerInfo extends React.Component {
               }}
             >
               If you'd like to get in touch leave your information and I'll get
-              back to you as soon as possible
+              back to you.
             </h3>
             <form onSubmit={this.sendInfo}>
               <TextInputGroup

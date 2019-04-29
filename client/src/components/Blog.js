@@ -42,10 +42,8 @@ class Blog extends React.Component {
           Blog
         </div>
         <div className="col-lg-9 col-md-12" style={{ alignSelf: "center" }}>
-          <div class="form-group">
-            <label htmlFor="title" className="higherLowerDisplay">
-              Title:
-            </label>
+          <div className="form-group">
+            <label className="higherLowerDisplay">Title:</label>
             <input
               value={title}
               name="title"
@@ -61,7 +59,7 @@ class Blog extends React.Component {
               value={body}
               name="body"
               onChange={this.onChange}
-              class="form-control higherLowerRollIn2"
+              className="form-control higherLowerRollIn2"
               rows="10"
               id="comment"
               style={inputBoxes}
@@ -71,7 +69,9 @@ class Blog extends React.Component {
               style={{ marginTop: "1%", marginBottom: "1%" }}
               onClick={this.submit}
             >
-              Submit Entry
+              <span>
+                Submit Entry <i className="fa fa-comment" />
+              </span>
             </button>
             <span
               style={{

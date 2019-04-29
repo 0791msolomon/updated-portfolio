@@ -1,4 +1,6 @@
 const { Blog } = require("../models/Blog");
+const mongoose = require("mongoose");
+mongoose.set("useFindAndModify", false);
 
 const postBlog = (req, res) => {
   let blog = new Blog({
@@ -28,13 +30,39 @@ const getAll = (req, res) => {
 };
 
 const likePost = (req, res) => {
-  console.log(req.params.id);
-  Blog.findById(req.params.id)
-    .then(response => {
-      console.log(response);
-    })
-    .catch(err => {
-      console.log(err);
-    });
+  Blog.findById({ _id: req.params.id }).then(doc => {
+    let likes;
+    doc.likes ? (likes = doc.likes += 1) : (likes = 1);
+    Blog.findOneAndUpdate(
+      { _id: req.params.id },
+      { $set: { likes } },
+      { new: true },
+      function(err, doc2) {
+        if (err) {
+          console.log(err);
+          res.status(500).send(err);
+        }
+        res.status(200).send(doc2);
+      }
+    );
+  });
 };
-module.exports = { postBlog, getAll, likePost };
+const reply = (req, res) => {
+  Blog.findOneAndUpdate(
+    { _id: req.body.id },
+    {
+      $push: {
+        replies: { comment: req.body.comment, time: Date.parse(new Date()) }
+      }
+    },
+    { new: true },
+    (err, doc) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send(err);
+      }
+      res.status(200).send(doc);
+    }
+  );
+};
+module.exports = { postBlog, getAll, likePost, reply };
