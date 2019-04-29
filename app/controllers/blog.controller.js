@@ -3,7 +3,8 @@ const { Blog } = require("../models/Blog");
 const postBlog = (req, res) => {
   let blog = new Blog({
     title: req.body.title,
-    body: req.body.body
+    body: req.body.body,
+    time: Date.parse(new Date())
   });
   blog
     .save()
@@ -25,4 +26,15 @@ const getAll = (req, res) => {
       res.status(400).send(err);
     });
 };
-module.exports = { postBlog, getAll };
+
+const likePost = (req, res) => {
+  console.log(req.params.id);
+  Blog.findById(req.params.id)
+    .then(response => {
+      console.log(response);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
+module.exports = { postBlog, getAll, likePost };

@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import "./index.css";
 class Blog extends React.Component {
   state = { title: "", body: "" };
@@ -18,17 +19,6 @@ class Blog extends React.Component {
         this.setState({ title: "", body: "" });
       })
       .catch(err => console.log(err));
-  };
-  viewAll = e => {
-    e.preventDefault();
-    axios
-      .get("/api/blog")
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err => {
-        console.log(err);
-      });
   };
 
   render() {
@@ -91,18 +81,22 @@ class Blog extends React.Component {
                 justifyContent: "space-around"
               }}
             >
+              <Link className="col-lg-5 col-sm-12" to="/allblogs">
+                <button
+                  className="buttonFadeUp clearbtn form-control  "
+                  style={{
+                    backgroundColor: "grey",
+                    color: "white"
+                  }}
+                >
+                  View All
+                </button>
+              </Link>
               <button
                 className="buttonFadeUp clearbtn form-control col-lg-5 col-sm-12"
                 style={{ backgroundColor: "grey", color: "white" }}
-                onClick={this.viewAll}
               >
-                View All
-              </button>
-              <button
-                className="buttonFadeUp clearbtn form-control col-lg-5 col-sm-12"
-                style={{ backgroundColor: "grey", color: "white" }}
-              >
-                Hide All
+                Clear form
               </button>
             </span>
           </div>
