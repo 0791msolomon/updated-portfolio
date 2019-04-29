@@ -28,6 +28,7 @@ const About = props => {
             className="shit"
             data-toggle="collapse"
             data-target="#collapseExample"
+            href="#collapseExample"
             aria-expanded="false"
             aria-controls="collapseExample"
           >
