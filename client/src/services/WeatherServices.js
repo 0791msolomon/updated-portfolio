@@ -4,7 +4,7 @@ baseUrl += "/api";
 
 export const forecast = async (zip, unit) => {
   let response = await axios.get(
-    `http://api.openweathermap.org/data/2.5/forecast?zip=${zip},us&units=${unit}&APPID=${
+    `https://api.openweathermap.org/data/2.5/forecast?zip=${zip},us&units=${unit}&APPID=${
       process.env.REACT_APP_WEATHER_API_KEY
     }`
   );
