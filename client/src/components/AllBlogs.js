@@ -21,6 +21,7 @@ class AllBlogs extends React.Component {
       .get("/api/blog")
       .then(res => {
         console.log(res.data);
+        console.log(Math.ceil(res.data.length / 3));
         this.setState({ blogs: res.data, displayBlog: res.data[0] });
       })
       .catch(err => {
@@ -79,7 +80,7 @@ class AllBlogs extends React.Component {
 
   displayBlogs = () => {
     return this.state.blogs.map((blog, i) => {
-      if (blog._id === this.state.displayBlog._id) {
+      if (i > 3 || blog._id === this.state.displayBlog._id) {
         return;
       }
       return (
@@ -87,7 +88,7 @@ class AllBlogs extends React.Component {
           className="card blogCard"
           key={blog._id}
           style={{
-            marginTop: "2%",
+            marginTop: "5%",
             background: (0, 151, 19, 0.6),
             color: "white"
           }}
@@ -179,7 +180,6 @@ class AllBlogs extends React.Component {
                     onClick={() => this.setState({ modal: true })}
                   >
                     <span>
-                      {" "}
                       Reply <i className="fa fa-comment" />
                     </span>
                   </button>
@@ -225,9 +225,7 @@ class AllBlogs extends React.Component {
             <div
               style={{
                 display: "flex",
-                flexDirection: "column",
-                maxHeight: "50vh",
-                overflow: "auto"
+                flexDirection: "column"
               }}
             >
               <div
@@ -236,19 +234,38 @@ class AllBlogs extends React.Component {
                   alignSelf: "center"
                 }}
               >
-                All Blogs
+                BLOGS
               </div>
+
               <div
                 style={{
                   display: "flex",
-                  flexDirection: "column",
-                  maxHeight: "50vh",
-                  overflow: "auto"
+                  flexDirection: "column"
                 }}
                 className="blogsFadeInRight"
               >
                 {this.displayBlogs()}
               </div>
+
+              <nav style={{ marginTop: "2%", alignSelf: "center" }}>
+                <ul class="pagination pagination-sm">
+                  {/* <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">
+                      1
+                    </a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">
+                      2
+                    </a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">
+                      3
+                    </a>
+                  </li> */}
+                </ul>
+              </nav>
             </div>
           </div>
         ) : null}
