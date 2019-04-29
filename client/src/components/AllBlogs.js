@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import moment from "moment";
+import * as blogServices from "../services/BlogServices";
 class AllBlogs extends React.Component {
   constructor(props) {
     super(props);
@@ -22,10 +23,20 @@ class AllBlogs extends React.Component {
       displayBlog: blog
     });
   };
+  likeBlog = id => {
+    blogServices
+      .likeBlog(id)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
 
   displayBlogs = () => {
     return this.state.blogs.map((blog, i) => {
-      if (i > 4 || blog._id === this.state.displayBlog._id) {
+      if (blog._id === this.state.displayBlog._id) {
         return;
       }
       return (
@@ -39,7 +50,7 @@ class AllBlogs extends React.Component {
           }}
           onClick={() => this.setDisplayBlog(blog)}
         >
-          <div class="card-body">
+          <div class="card-body" style={{ border: "1px solid white" }}>
             <h5 class="card-title">{blog.title}</h5>
             <h6 class="card-subtitle mb-2 text-muted">
               {moment(blog.time).format("lll")}
@@ -102,7 +113,11 @@ class AllBlogs extends React.Component {
                 </div>
                 <div
                   class="card-body"
-                  style={{ maxHeight: "50vh", overflow: "auto" }}
+                  style={{
+                    maxHeight: "50vh",
+                    minHeight: "50vh",
+                    overflow: "auto"
+                  }}
                 >
                   <p class="card-text">{this.state.displayBlog.body}</p>
                 </div>
@@ -121,7 +136,10 @@ class AllBlogs extends React.Component {
                   <div className="col-lg-3 col-sm-12 card-footer text-muted">
                     {moment(this.state.displayBlog.time).format("lll")}
                   </div>
-                  <button className="form-control btn-info col-lg-3 col-sm-12">
+                  <button
+                    className="form-control btn-info col-lg-3 col-sm-12"
+                    onClick={() => this.likeBlog(this.state.displayBlog._id)}
+                  >
                     Like
                   </button>
                 </div>
@@ -133,7 +151,19 @@ class AllBlogs extends React.Component {
                 flexDirection: "column"
               }}
             >
-              {this.displayBlogs()}
+              <div style={{ color: "white", alignSelf: "center" }}>
+                All Blogs
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  maxHeight: "50vh",
+                  overflow: "auto"
+                }}
+              >
+                {this.displayBlogs()}
+              </div>
             </div>
           </div>
         ) : null}

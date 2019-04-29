@@ -6,3 +6,4 @@ module.exports = router;
 
 router.get("/", blogController.getAll);
 router.post("/", blogController.postBlog);
+router.post("/like/:id", blogController.likePost);
