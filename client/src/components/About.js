@@ -24,7 +24,7 @@ const About = props => {
             className="fa aboutMePointer fa-hand-o-right fa-2x"
             style={{ color: "white", fontWeight: "bold" }}
           />
-          <h1
+          <div
             className="shit"
             data-toggle="collapse"
             data-target="#collapseExample"
@@ -32,9 +32,17 @@ const About = props => {
             aria-expanded="false"
             aria-controls="collapseExample"
           >
-            About Me
-          </h1>
-
+            <h1
+            // className="shit"
+            // data-toggle="collapse"
+            // data-target="#collapseExample"
+            // href="#collapseExample"
+            // aria-expanded="false"
+            // aria-controls="collapseExample"
+            >
+              About Me
+            </h1>
+          </div>
           <i
             className="fa aboutMePointer fa-hand-o-left fa-2x"
             style={{ color: "white", fontWeight: "bold" }}
