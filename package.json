@@ -7,8 +7,8 @@
     "client": "cd client && npm start",
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"npm server\" \"npm client\"",
+    "start": "node server.js",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
-
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "mongodb": "^3.2.3",
     "mongoose": "^5.5.4",
     "nodemon": "^1.18.10",
-    "npm": "^6.9.0"
+    "npm": "^6.9.0",
+    "path": "^0.12.7"
   }
 }
