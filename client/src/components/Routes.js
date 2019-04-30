@@ -1,8 +1,9 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Home from "./Home";
+import NumberTrivia from "./NumberTrivia";
 import About from "./About";
 import Blog from "./Blog";
+import Trivia from "./Trivia";
 import AllBlogs from "./AllBlogs";
 import NotFound from "./NotFound";
 import Params from "./Params";
@@ -16,7 +17,9 @@ const Routes = props => {
         <Switch>
           <Route exact path="/" component={HigherLower} />
           <Route path="/blog" component={Blog} />
+          <Route path="/number" component={NumberTrivia} />
           <Route path="/allblogs" component={AllBlogs} />
+          <Route path="/trivia" component={Trivia} />
           <Route path="/todo" component={TodoList} />
           <Route path="/about" component={About} />
           <Route path="/params/:name" component={Params} />

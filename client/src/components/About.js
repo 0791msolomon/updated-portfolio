@@ -84,9 +84,7 @@ const About = props => {
               to Flagstaff Arizona to pursue that. Currently I'm at the same
               company and continuing to hone my skills and learn new
               technologies whenever the opportunity presents itself or during my
-              free time, however I am keeping my options open and plan on moving
-              back to Southern California to find more challenging work and
-              continue growing as a developer.
+              free time.
             </h5>
           </div>
         </div>

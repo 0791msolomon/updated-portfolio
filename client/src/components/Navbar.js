@@ -72,6 +72,18 @@ class Navbar extends Component {
               }}
               className="nav-item"
             >
+              <Link to="/trivia">
+                <h5 className="navbarHeader" style={{ color: "white" }}>
+                  Trivia
+                </h5>
+              </Link>
+            </li>
+            <li
+              style={{
+                marginTop: "1%"
+              }}
+              className="nav-item"
+            >
               <Link to="/todo">
                 <h5 className="navbarHeader" style={{ color: "white" }}>
                   Todo List
