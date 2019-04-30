@@ -80,7 +80,7 @@ class AllBlogs extends React.Component {
 
   displayBlogs = () => {
     return this.state.blogs.map((blog, i) => {
-      if (i > 3 || blog._id === this.state.displayBlog._id) {
+      if (blog._id === this.state.displayBlog._id) {
         return;
       }
       return (
@@ -240,7 +240,9 @@ class AllBlogs extends React.Component {
               <div
                 style={{
                   display: "flex",
-                  flexDirection: "column"
+                  flexDirection: "column",
+                  maxHeight: "50vh",
+                  overflow: "auto"
                 }}
                 className="blogsFadeInRight"
               >

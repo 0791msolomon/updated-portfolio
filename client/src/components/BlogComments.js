@@ -3,7 +3,6 @@ import moment from "moment";
 const BlogComments = props => {
   const renderComments = () => {
     return props.comments.map(item => {
-      console.log(item.time);
       return (
         <div key={item.time ? item.time : item}>
           <textarea

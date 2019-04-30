@@ -11,7 +11,9 @@ const Technologies = props => {
       }}
     >
       <div style={{ color: "white", fontWeight: "bold", alignSelf: "center" }}>
-        <h1>Here are some of the technologies that I use.</h1>
+        <h1 style={{ fontFamily: '"Times New Roman", Times, serif' }}>
+          Familiar Technologies
+        </h1>
       </div>
       <div
         style={{
@@ -21,144 +23,192 @@ const Technologies = props => {
           flexWrap: "wrap"
         }}
       >
-        <div className="col-lg-3 col-md-6 col-sm-12" id="frontendParent">
+        <div className="col-12" id="frontendParent">
           <h2
             style={{
               color: "#ff2647",
               fontWeight: "bold",
-              alignSelf: "center"
+              display: "flex",
+              justifyContent: "center",
+              fontFamily: '"Times New Roman", Times, serif'
             }}
           >
             Front End
           </h2>
           <div id="hover-content">
             <ul
+              className="slideInRight"
               style={{
                 listStyle: "none",
                 display: "flex",
-                flexDirection: "column",
-                alignSelf: "center"
+                flexDirection: "row",
+                flexWrap: "wrap",
+                alignSelf: "center",
+                justifyContent: "center"
               }}
             >
-              <li>
-                <h4 style={{ color: "white", fontWeight: "bold" }}>
-                  JavaScript
-                </h4>
+              <li style={{ marginLeft: "1%" }}>
+                <h6 style={{ color: "white", fontWeight: "bold" }}>
+                  JavaScript,
+                </h6>
               </li>
-              <li>
-                <h4 style={{ color: "white", fontWeight: "bold" }}>React.js</h4>
+              <li style={{ marginLeft: "1%" }}>
+                <h6 style={{ color: "white", fontWeight: "bold" }}>
+                  React.js,
+                </h6>
               </li>
-              <li>
-                <h4 style={{ color: "white", fontWeight: "bold" }}>Redux</h4>
+              <li style={{ marginLeft: "1%" }}>
+                <h6 style={{ color: "white", fontWeight: "bold" }}>Redux,</h6>
               </li>
-              <li>
-                <h4 style={{ color: "white", fontWeight: "bold" }}>jQuery</h4>
+              <li style={{ marginLeft: "1%" }}>
+                <h6 style={{ color: "white", fontWeight: "bold" }}>jQuery,</h6>
               </li>
-              <li>
-                <h4 style={{ color: "white", fontWeight: "bold" }}>CSS3</h4>
+              <li style={{ marginLeft: "1%" }}>
+                <h6 style={{ color: "white", fontWeight: "bold" }}>CSS3,</h6>
               </li>
-              <li>
-                <h4 style={{ color: "white", fontWeight: "bold" }}>
-                  Twitter Bootstrap
-                </h4>
+              <li style={{ marginLeft: "1%" }}>
+                <h6 style={{ color: "white", fontWeight: "bold" }}>
+                  CSS Flexbox,
+                </h6>
               </li>
-              <li>
-                <h4 style={{ color: "white", fontWeight: "bold" }}>HTML5</h4>
+              <li style={{ marginLeft: "1%" }}>
+                <h6 style={{ color: "white", fontWeight: "bold" }}>
+                  Twitter Bootstrap,
+                </h6>
               </li>
-              <li>
-                <h4 style={{ color: "white", fontWeight: "bold" }}>AJAX</h4>
+              <li style={{ marginLeft: "1%" }}>
+                <h6 style={{ color: "white", fontWeight: "bold" }}>HTML5,</h6>
               </li>
-              <li>
-                <h4 style={{ color: "white", fontWeight: "bold" }}>
+              <li style={{ marginLeft: "1%" }}>
+                <h6 style={{ color: "white", fontWeight: "bold" }}>AJAX,</h6>
+              </li>{" "}
+              <li style={{ marginLeft: "1%" }}>
+                <h6 style={{ color: "white", fontWeight: "bold" }}>
                   Material-UI
-                </h4>
+                </h6>
               </li>
             </ul>
           </div>
         </div>
-        <div className="col-lg-3 col-md-6 col-sm-12" id="backendParent">
-          <h2 style={{ color: "#ff8026", fontWeight: "bold" }}>Middle Tier</h2>
+        <div className="col-12" id="backendParent">
+          <h2
+            style={{
+              color: "#ff8026",
+              fontWeight: "bold",
+              display: "flex",
+              justifyContent: "center",
+              fontFamily: '"Times New Roman", Times, serif'
+            }}
+          >
+            Middle Tier
+          </h2>
           <div id="hover-content">
             <ul
               style={{
                 listStyle: "none",
                 display: "flex",
-                flexDirection: "column",
-                alignSelf: "center"
+                flexDirection: "row",
+                flexWrap: "wrap",
+                alignSelf: "center",
+                justifyContent: "center"
               }}
             >
-              <li>
-                <h4 style={{ color: "white", fontWeight: "bold" }}>Node.js</h4>
+              <li style={{ marginLeft: "1%" }}>
+                <h6 style={{ color: "white", fontWeight: "bold" }}>Node.js,</h6>
               </li>
-              <li>
-                <h4 style={{ color: "white", fontWeight: "bold" }}>
+              <li style={{ marginLeft: "1%" }}>
+                <h6 style={{ color: "white", fontWeight: "bold" }}>
                   ExpressJS
-                </h4>
+                </h6>
               </li>
             </ul>
           </div>
         </div>
-        <div className="col-lg-3 col-md-6 col-sm-12" id="middletierParent">
-          <h2 style={{ color: "#2667ff", fontWeight: "bold" }}>Backend</h2>
+        <div className="col-12" id="middletierParent">
+          <h2
+            style={{
+              color: "#2667ff",
+              fontWeight: "bold",
+              display: "flex",
+              justifyContent: "center",
+              fontFamily: '"Times New Roman", Times, serif'
+            }}
+          >
+            Backend
+          </h2>
           <div id="hover-content">
             <ul
               style={{
                 listStyle: "none",
                 display: "flex",
-                flexDirection: "column",
-                alignSelf: "center"
+                flexDirection: "row",
+                flexWrap: "wrap",
+                alignSelf: "center",
+                justifyContent: "center"
               }}
             >
-              <li>
-                <h4 style={{ color: "white", fontWeight: "bold" }}>MongoDB</h4>
+              <li style={{ marginLeft: "1%" }}>
+                <h6 style={{ color: "white", fontWeight: "bold" }}>MongoDB,</h6>
               </li>
-              <li>
-                <h4 style={{ color: "white", fontWeight: "bold" }}>Firebase</h4>
+              <li style={{ marginLeft: "1%" }}>
+                <h6 style={{ color: "white", fontWeight: "bold" }}>Firebase</h6>
               </li>
             </ul>
           </div>
         </div>
-        <div className="col-lg-3 col-md-6 col-sm-12" id="otherParent">
-          <h2 style={{ color: "#47ff26", fontWeight: "bold" }}>Other</h2>
+        <div className="col-12" id="otherParent">
+          <h2
+            style={{
+              color: "#47ff26",
+              fontWeight: "bold",
+              display: "flex",
+              justifyContent: "center",
+              fontFamily: '"Times New Roman", Times, serif'
+            }}
+          >
+            Other
+          </h2>
           <div id="hover-content">
             <ul
               style={{
+                justifyContent: "center",
                 listStyle: "none",
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: "row",
+                flexWrap: "wrap",
                 alignSelf: "center"
               }}
             >
-              <li>
-                <h4 style={{ color: "white", fontWeight: "bold" }}>VS Code</h4>
+              <li style={{ marginLeft: "1%" }}>
+                <h6 style={{ color: "white", fontWeight: "bold" }}>VS Code,</h6>
               </li>
-              <li>
-                <h4 style={{ color: "white", fontWeight: "bold" }}>Robo 3T</h4>
+              <li style={{ marginLeft: "1%" }}>
+                <h6 style={{ color: "white", fontWeight: "bold" }}>Robo 3T,</h6>
               </li>
-              <li>
-                <h4 style={{ color: "white", fontWeight: "bold" }}>
-                  Advanced REST Client
-                </h4>
+              <li style={{ marginLeft: "1%" }}>
+                <h6 style={{ color: "white", fontWeight: "bold" }}>
+                  Advanced REST Client,
+                </h6>
               </li>
-              <li>
-                <h4 style={{ color: "white", fontWeight: "bold" }}>Postman</h4>
+              <li style={{ marginLeft: "1%" }}>
+                <h6 style={{ color: "white", fontWeight: "bold" }}>Postman,</h6>
               </li>
-              <li>
-                <h4 style={{ color: "white", fontWeight: "bold" }}>TFS</h4>
+              <li style={{ marginLeft: "1%" }}>
+                <h6 style={{ color: "white", fontWeight: "bold" }}>TFS,</h6>
               </li>
-              <li>
-                <h4 style={{ color: "white", fontWeight: "bold" }}>Git</h4>
+              <li style={{ marginLeft: "1%" }}>
+                <h6 style={{ color: "white", fontWeight: "bold" }}>Git,</h6>
               </li>
-              <li>
-                <h4 style={{ color: "white", fontWeight: "bold" }}>Trello</h4>
+              <li style={{ marginLeft: "1%" }}>
+                <h6 style={{ color: "white", fontWeight: "bold" }}>Trello,</h6>
               </li>
-              <li>
-                <h4 style={{ color: "white", fontWeight: "bold" }}>
-                  Agile/Scrum
-                </h4>
+              <li style={{ marginLeft: "1%" }}>
+                <h6 style={{ color: "white", fontWeight: "bold" }}>
+                  Agile/Scrum ,
+                </h6>
               </li>
-              <li>
-                <h4 style={{ color: "white", fontWeight: "bold" }}>Heroku</h4>
+              <li style={{ marginLeft: "1%" }}>
+                <h6 style={{ color: "white", fontWeight: "bold" }}>Heroku</h6>
               </li>
             </ul>
           </div>

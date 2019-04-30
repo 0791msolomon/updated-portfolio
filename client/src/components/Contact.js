@@ -3,7 +3,7 @@ import "./index.css";
 const Contact = props => {
   return (
     <div
-      className="container"
+      // className="container"
       style={{ display: "flex", justifyContent: "center" }}
     >
       <div style={{ border: "solid 3px white" }} className="col-lg-6 col-sm-12">
@@ -13,7 +13,7 @@ const Contact = props => {
         <p className="lead" style={popFont}>
           You can check me out on any of the links below, if you wanna get in
           touch fill out the form above
-          <i className="fa fa-arrow-up" /> I'll keep an eye out!
+          <i className="fa fa-arrow-up" />
         </p>
         <hr className="my-4" style={{ backgroundColor: "white" }} />
         <div

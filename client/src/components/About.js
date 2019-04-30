@@ -17,7 +17,8 @@ const About = props => {
           style={{
             display: "flex",
             flexDirection: "row",
-            alignItems: "baseline"
+            alignItems: "baseline",
+            alignSelf: "center"
           }}
         >
           <i
@@ -31,8 +32,9 @@ const About = props => {
             href="#collapseExample"
             aria-expanded="false"
             aria-controls="collapseExample"
+            style={{ display: "flex", justifyContent: "center" }}
           >
-            <h1>About Me</h1>
+            <h3> About</h3>
           </div>
           <i
             className="fa aboutMePointer fa-hand-o-left fa-2x"
@@ -49,43 +51,42 @@ const About = props => {
             justifyContent: "center"
           }}
         >
-          <div id="collapseExample" className="collapse">
+          <div id="collapseExample" className="collapse show">
             <h5
               style={{
                 color: "white",
                 fontFamily: '"Courier New", Courier, monospace'
               }}
             >
-              Hi there, here's a few things about me for anyone interested. My
-              name is Matt Solomon, I'm originally from Cleveland Ohio (lived
-              there until I was 18). Once I graduated from highschool I left
-              Ohio to join the Marines, I spent my first few months in South
-              Carolina and once I finished bootcamp I was sent over to be
-              stationed on Camp Pendleton in Oceanside California. I spent the
-              next five years in the marines completing two deployments during
-              my service, after which I was honorably discharged and decided to
-              continue living in California (can't beat the weather). I then
-              tried my luck at joining the Navy, unfortunately things didn't
-              work out with that so I decided to utilize my GI bill and go back
-              to school. Initially my plans were to pursue a career as a fireman
+              My name is Matt Solomon, I'm originally from Cleveland Ohio (lived
+              there until I was 18). Once I graduated from highschool I left to
+              join the Marines, I spent my first few months in South Carolina
+              and once I finished bootcamp I was sent over to be stationed on
+              Camp Pendleton in Oceanside California. I spent the next five
+              years in the marines completing two deployments during my service,
+              after which I was honorably discharged and decided to continue
+              living in California (can't beat the weather). I then tried my
+              luck at joining the Navy, unfortunately things didn't work out
+              with that so I decided to utilize my GI bill and go back to
+              school. Initially my plans were to pursue a career as a fireman
               but after a few semesters I started feeling as though that wasn't
-              going to be a great fit. Around that same time a friend of mine
-              had shown me some code he was working on and suggested I look into
-              that and see if it interested me at all. After completing a few
-              courses on codecademy I'd become pretty hooked on development, and
-              was recommended by my same friend who introduced me to it, to
-              check into coding bootcamps. Luckily I found a place (Sabio) that
+              going to be a great fit. Around that same time a friend of mine,
+              who is a software developer, had shown me some code he was working
+              on and suggested I look into that and see if it interested me at
+              all. After completing a few courses on codecademy I'd become
+              pretty hooked, and was recommended by that same friend to check
+              into coding bootcamps. Luckily I found a place (Sabio) that
               accepted the GI bill up in Los Angeles. I spent six months there
               learning the fundamentals and was on my way. I was put in touch
               with a company called Seqqure through Sabio and worked as a full
               stack developer to create an MVP for them. Once that was finished
-              I got a job offer from my current employer and made the move to
-              Flagstaff Arizona to pursue that. Currently I'm at the same
+              I received a job offer from my current employer and made the move
+              to Flagstaff Arizona to pursue that. Currently I'm at the same
               company and continuing to hone my skills and learn new
-              technologies whenever the opportunity presents itself, however I
-              am always keeping my options open and plan on moving back to
-              Southern California to find more challenging work and continue
-              growing as a developer.
+              technologies whenever the opportunity presents itself or during my
+              free time, however I am keeping my options open and plan on moving
+              back to Southern California to find more challenging work and
+              continue growing as a developer.
             </h5>
           </div>
         </div>

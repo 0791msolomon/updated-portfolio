@@ -9,9 +9,14 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-dark bg-dark">
-        <a className="navbar-brand" href="#">
-          Mini project samples
-        </a>
+        <h2
+          style={{
+            color: "white",
+            fontFamily: '"Times New Roman", Times, serif'
+          }}
+        >
+          Sample Projects
+        </h2>
         <button
           className="navbar-toggler"
           type="button"
@@ -32,7 +37,9 @@ class Navbar extends Component {
               className="nav-item active"
             >
               <Link to="/">
-                <h4>Higher-Lower</h4>
+                <h5 className="navbarHeader" style={{ color: "white" }}>
+                  Higher-Lower
+                </h5>
               </Link>
             </li>
             <li
@@ -42,7 +49,9 @@ class Navbar extends Component {
               className="nav-item"
             >
               <Link to="/weather">
-                <h4>Weather Forecast</h4>
+                <h5 className="navbarHeader" style={{ color: "white" }}>
+                  Weather Forecast
+                </h5>
               </Link>
             </li>
             <li
@@ -52,7 +61,21 @@ class Navbar extends Component {
               className="nav-item"
             >
               <Link to="/blog">
-                <h4>Blog</h4>
+                <h5 className="navbarHeader" style={{ color: "white" }}>
+                  Blog
+                </h5>
+              </Link>
+            </li>
+            <li
+              style={{
+                marginTop: "1%"
+              }}
+              className="nav-item"
+            >
+              <Link to="/todo">
+                <h5 className="navbarHeader" style={{ color: "white" }}>
+                  Todo List
+                </h5>
               </Link>
             </li>
           </ul>

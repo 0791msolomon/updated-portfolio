@@ -62,6 +62,7 @@ class ViewerInfo extends React.Component {
     return (
       <React.Fragment>
         <div
+          className="container"
           style={{
             display: "flex",
             flexWrap: "wrap",

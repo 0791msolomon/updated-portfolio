@@ -27,7 +27,11 @@
   color: "white";
   font-weight: bold;
 }
+.navbarHeader {
+  font-weight: bold;
 
+  font-family: Andale Mono, monospace
+ }
 .higherLowerDisplay {
   -webkit-animation: fadeInDown 1s;
   animation: fadeInDown 1s;
@@ -97,7 +101,8 @@
 .shit {
   border-radius: 20% 20%;
   border: solid 2px white;
-  padding: 2%;
+  padding: 10%;
+  margin: 5%;
   color: white;
   transition: 1s;
   display: "flex";
@@ -116,6 +121,8 @@
 }
 #hover-content {
   opacity: 0;
+
+
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -o-transition: 0.5s;
@@ -169,18 +176,22 @@
 } */
 #frontendParent:hover #hover-content {
   opacity: 1;
-}
+  animation: fadeInLeft 1s;
+ }
 #middletierParent:hover #hover-content {
   opacity: 1;
-}
+  animation: fadeInLeft 1s;
+ }
 
 #backendParent:hover #hover-content {
   opacity: 1;
-}
+  animation: fadeInLeft 1s;
+ }
 
 #otherParent:hover #hover-content {
   opacity: 1;
-}
+  animation: fadeInLeft 1s;
+ }
 
 #contactme {
   background-color: black;
