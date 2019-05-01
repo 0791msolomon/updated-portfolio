@@ -74,7 +74,7 @@ class Navbar extends Component {
             >
               <Link to="/trivia">
                 <h5 className="navbarHeader" style={{ color: "white" }}>
-                  Trivia
+                  Random API's
                 </h5>
               </Link>
             </li>
