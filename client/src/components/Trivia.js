@@ -10,7 +10,15 @@ class Trivia extends React.Component {
     question: "",
     answer: "",
     urbanWord: "",
-    urbanResults: []
+    urbanResults: [],
+    randomWords: [
+      "scamazon",
+      "capper",
+      "swooped",
+      "lick",
+      "antistalking",
+      "dip"
+    ]
   };
 
   onClick = async e => {
@@ -33,6 +41,12 @@ class Trivia extends React.Component {
     this.setState({
       [e.target.name]: e.target.value
     });
+  };
+  randomizeWordSearch = () => {
+    var item = this.state.randomWords[
+      Math.floor(Math.random() * this.state.randomWords.length)
+    ];
+    console.log(item);
   };
   render() {
     return (
@@ -120,14 +134,16 @@ class Trivia extends React.Component {
               >
                 ANSWER
               </label>
-              <input
-                className="form-control  "
-                type="text"
-                value={this.state.answer}
-                onChange={() => null}
-                style={inputBox}
-                disabled
-              />
+              <div className="col-12 weatherFadeInUp2">
+                <input
+                  className="form-control  "
+                  type="text"
+                  value={this.state.answer}
+                  onChange={() => null}
+                  style={inputBox}
+                  disabled
+                />
+              </div>
             </div>
           </div>
           <div
@@ -225,7 +241,7 @@ class Trivia extends React.Component {
                   fontWeight: "bold"
                 }}
               >
-                CLICK FOR RANDOM WORD
+                {this.state.urbanWord.trim() ? "RANDOM DISABLED" : " RANDOM"}
               </label>
               {/* <input
                 className="form-control  "
@@ -235,7 +251,21 @@ class Trivia extends React.Component {
                 style={inputBox}
                 disabled
               /> */}
-              <button className="form-control btn-info">Select random</button>
+              <div className="col-12 weatherFadeInUp2">
+                <button
+                  className={
+                    this.state.urbanWord.trim()
+                      ? "btn-danger form-control"
+                      : "btn-success form-control"
+                  }
+                  disabled={this.state.urbanWord.trim() ? true : false}
+                  onClick={this.randomizeWordSearch}
+                >
+                  {this.state.urbanWord.trim()
+                    ? "Input has value"
+                    : "Search random word"}
+                </button>
+              </div>
             </div>
           </div>
           <div
@@ -248,11 +278,15 @@ class Trivia extends React.Component {
           >
             <div className="col-12 weatherFadeInUp2">
               <button
-                className="btn-success form-control"
-                disabled={this.state.urbanWord ? true : false}
+                className={
+                  this.state.urbanWord.trim()
+                    ? "btn-success form-control"
+                    : "btn-danger form-control"
+                }
+                disabled={!this.state.urbanWord.trim() ? true : false}
                 onClick={this.onClick}
               >
-                SUBMIT ENTERED WORD
+                {this.state.urbanWord.trim() ? "Search" : "No value"}
               </button>
             </div>
           </div>
