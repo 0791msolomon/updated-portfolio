@@ -11,9 +11,11 @@ export const forecast = async (zip, unit) => {
   return response;
 };
 
-const responseError = error => {
-  return Promise.reject(error);
-};
-const responseSuccess = response => {
-  return response.data;
+export const findCity = async zip => {
+  try {
+    let response = axios.get(`${baseUrl}/weather`, { params: { zip } });
+    return response;
+  } catch (err) {
+    return err;
+  }
 };

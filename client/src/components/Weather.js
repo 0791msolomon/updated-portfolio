@@ -2,7 +2,6 @@ import React from "react";
 import classnames from "classnames";
 import * as weatherServices from "../services/WeatherServices";
 import moment from "moment";
-import axios from "axios";
 import "./index.css";
 import ThreeDayForecast from "./charts/ThreeDayForecast";
 import InvalidZip from "./charts/InvalidZip";
@@ -12,7 +11,9 @@ class Weather extends React.Component {
     unit: "imperial",
     displayGraph: false,
     sixHourInterval: [],
-    notFound: false
+    arr: [],
+    notFound: false,
+    city: []
   };
   onChange = e => {
     this.setState({
@@ -27,7 +28,8 @@ class Weather extends React.Component {
         this.state.zip,
         this.state.unit
       );
-      console.log(response.data);
+      let city = await weatherServices.findCity(this.state.zip);
+      console.log(city);
       let sixHourInterval = [];
       for (let i = 0; i < response.data.list.length; i++) {
         if (
@@ -51,13 +53,43 @@ class Weather extends React.Component {
           });
         }
       });
-      this.setState({ displayGraph: true, sixHourInterval: arr });
+      let town = city.data;
+      let cities = this.state.city.concat(town);
+      let newArr = this.state.arr.concat({ arr });
+      await this.setState({
+        displayGraph: true,
+        sixHourInterval: arr,
+        arr: newArr,
+        zip: "",
+        city: cities
+      });
     } catch (err) {
       this.setState({
         displayGraph: false,
-        notFound: true
+        notFound: true,
+        zip: ""
       });
     }
+  };
+  deleteGraph = id => {
+    let arr = this.state.arr;
+    let cities = this.state.city;
+    let filteredCities = cities.filter((item, i) => i !== id);
+    let filtered = arr.filter((item, i) => i !== id);
+    this.setState({ arr: filtered, city: filteredCities });
+  };
+  renderForecast = () => {
+    return this.state.arr.map((item, i) => {
+      return (
+        <ThreeDayForecast
+          key={i}
+          info={Object.values(item)[0]}
+          index={i}
+          delete={id => this.deleteGraph(id)}
+          city={this.state.city[i]}
+        />
+      );
+    });
   };
 
   render() {
@@ -118,10 +150,8 @@ class Weather extends React.Component {
           <br />
           <br />
         </div>
-        <div className="col-lg-9 col-sm-12" style={{ alignSelf: "center" }}>
-          {this.state.displayGraph && (
-            <ThreeDayForecast info={this.state.sixHourInterval} />
-          )}
+        <div className="col-12" style={{ alignSelf: "center" }}>
+          {this.state.displayGraph ? this.renderForecast() : null}
           {this.state.notFound && <InvalidZip />}
         </div>
       </div>

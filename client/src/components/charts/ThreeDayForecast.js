@@ -7,7 +7,6 @@ const ThreeDayForecast = props => {
   let humidity = [];
   let times = [];
   props.info.map(item => {
-    console.log(item);
     degrees.push(Math.ceil(item.temp));
     humidity.push(item.humidity);
     times.push(moment(item.time).format("dddd"));
@@ -48,8 +47,8 @@ const ThreeDayForecast = props => {
 
   return (
     <div
-      className="weatherFadeInUp2"
-      style={{ border: "solid 3px white", padding: "3%" }}
+      className="weatherFadeInUp2 "
+      style={{ border: "solid 3px white", padding: "3%", marginTop: "2%" }}
     >
       <div>
         <Bar
@@ -80,12 +79,24 @@ const ThreeDayForecast = props => {
           fontWeight: "bold"
         }}
       >
-        <h4>{`The average temperature over the next 5 days is ${avgTemp.toFixed(
+        <h4 style={{ alignSelf: "center" }}>{props.city}</h4>
+        <h4
+          style={{ alignSelf: "center" }}
+        >{`The average temperature over the next 5 days is ${avgTemp.toFixed(
           1
         )} degrees`}</h4>
-        <h4>{`The average humidity percentage over the next 5 days is ${avgHumidity.toFixed(
+        <h4
+          style={{ alignSelf: "center" }}
+        >{`The average humidity percentage over the next 5 days is ${avgHumidity.toFixed(
           1
         )}%`}</h4>
+        <button
+          className="form-control btn-danger"
+          onClick={() => props.delete(props.index)}
+          style={{ fontFamily: "monospace", fontWeight: "bold" }}
+        >
+          REMOVE
+        </button>
       </div>
     </div>
   );

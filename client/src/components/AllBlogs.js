@@ -200,10 +200,10 @@ class AllBlogs extends React.Component {
               !this.state.showComments ? (
                 <button
                   style={{ marginTop: "2%" }}
-                  className="form-control btn-primary"
+                  className="form-control btn-info"
                   onClick={() => this.setState({ showComments: true })}
                 >
-                  Comments
+                  Show Comments
                 </button>
               ) : this.state.displayBlog.replies.length > 0 &&
                 this.state.showComments ? (
