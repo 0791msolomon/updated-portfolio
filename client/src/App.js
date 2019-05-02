@@ -6,6 +6,7 @@ import Contact from "./components/Contact";
 import { transitions, positions, Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 import AppBox from "./components/AppBox";
+import Trivia from "./components/Trivia";
 import Routes from "./components/Routes";
 import About from "./components/About";
 import Technologies from "./components/Technologies";
@@ -42,6 +43,30 @@ class App extends Component {
               >
                 <Navbar />
                 <Routes />
+              </div>
+              <div
+                style={{
+                  marginTop: "3%",
+                  background: (0, 151, 19, 0.1),
+                  paddingBottom: "3%",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center"
+                }}
+                className="  container"
+              >
+                {/* <div
+                  className="display-4"
+                  style={{
+                    alignSelf: "center",
+                    color: "white",
+                    marginBottom: "3%",
+                    fontFamily: "monospace"
+                  }}
+                >
+                  HTTP requests utilizing 3rd party API's
+                </div> */}
+                <Trivia />
               </div>
               <div
                 style={{

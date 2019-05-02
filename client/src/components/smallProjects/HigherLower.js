@@ -213,7 +213,7 @@ class HigherLower extends React.Component {
         <Modal
           visible={this.state.sendCompletionMessage}
           effect="fadeInUp"
-          onClickAway={() => this.closeModal()}
+          // onClickAway={() => this.closeModal()}
         >
           <div
             style={{

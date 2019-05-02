@@ -194,10 +194,10 @@ class Trivia extends React.Component {
               </label>
               <div className="col-12 weatherFadeInUp2">
                 <button
-                  className="btn-info form-control"
+                  className="btn-primary form-control"
                   onClick={this.searchRandomNumber}
                 >
-                  Search random number
+                  Search
                 </button>
               </div>
             </div>
@@ -266,6 +266,8 @@ class Trivia extends React.Component {
                 CATEGORY
               </label>
               <input
+                //  name="urbanWord"
+                //  value={this.state.urbanWord}
                 className="form-control  "
                 type="text"
                 value={this.state.category}
@@ -284,6 +286,8 @@ class Trivia extends React.Component {
                 QUESTION
               </label>
               <textarea
+                //   value={this.state.urbanResults}
+
                 cols="30"
                 rows="10"
                 style={inputBox}
@@ -333,16 +337,18 @@ class Trivia extends React.Component {
             </div>
           </div>
         </div>
+        {/* jfkldsajklf;dsjalkfjdsa;lfjsda;jfl;kdsaj;fjas;dlfjasdfkjl;dsaj;flsda */}
         <div className="col-lg-4 col-sm-12">
           <div
-            className="triviaDisplay"
+            className=" triviaDisplay"
             style={{
               color: "white",
               fontFamily: '"Times New Roman", Times, serif',
-              textAlign: "center"
+              display: "flex",
+              justifyContent: "center"
             }}
           >
-            <h1> Urban Dictionary</h1>
+            <h1>Urban Dictionary</h1>
           </div>
           <div
             style={{
@@ -359,7 +365,7 @@ class Trivia extends React.Component {
                 display: "flex",
                 flexDirection: "column"
               }}
-              className="col-12 triviaDisplay"
+              className=" triviaDisplay"
             >
               <label
                 style={{
@@ -368,13 +374,13 @@ class Trivia extends React.Component {
                   fontWeight: "bold"
                 }}
               >
-                INPUT WORD
+                WORD
               </label>
               <input
-                className="form-control "
-                type="text"
                 name="urbanWord"
                 value={this.state.urbanWord}
+                className="form-control  "
+                type="text"
                 onChange={this.onChange}
                 style={inputBox}
               />
@@ -386,13 +392,13 @@ class Trivia extends React.Component {
                   fontWeight: "bold"
                 }}
               >
-                RESULTS
+                DEFINITION
               </label>
               <textarea
+                value={this.state.urbanResults}
                 cols="30"
                 rows="10"
                 style={inputBox}
-                value={this.state.urbanResults}
                 onChange={() => null}
                 disabled
               />
@@ -405,22 +411,14 @@ class Trivia extends React.Component {
                   fontWeight: "bold"
                 }}
               >
-                {this.state.urbanWord.trim() ? "RANDOM DISABLED" : " RANDOM"}
+                RANDOM WORD
               </label>
-              {/* <input
-                className="form-control  "
-                type="text"
-                value={this.state.answer}
-                onChange={() => null}
-                style={inputBox}
-                disabled
-              /> */}
               <div className="col-12 weatherFadeInUp2">
                 <button
-                  className={"form-control btn-info"}
                   onClick={this.randomizeWordSearch}
+                  className="form-control btn-primary"
                 >
-                  random word
+                  Search
                 </button>
               </div>
             </div>

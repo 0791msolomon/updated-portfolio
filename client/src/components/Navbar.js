@@ -66,7 +66,7 @@ class Navbar extends Component {
                 </h5>
               </Link>
             </li>
-            <li
+            {/* <li
               style={{
                 marginTop: "1%"
               }}
@@ -77,7 +77,7 @@ class Navbar extends Component {
                   Random API's
                 </h5>
               </Link>
-            </li>
+            </li> */}
             {/* <li
               style={{
                 marginTop: "1%"
