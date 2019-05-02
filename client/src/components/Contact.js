@@ -6,13 +6,19 @@ const Contact = props => {
       // className="container"
       style={{ display: "flex", justifyContent: "center" }}
     >
-      <div style={{ border: "solid 3px white" }} className="col-lg-6 col-sm-12">
+      <div
+        style={{
+          border: "solid 3px white",
+          display: "flex",
+          flexDirection: "column"
+        }}
+        className="col-lg-6 col-sm-12"
+      >
         <h1 className="display-4" style={popFont}>
-          Click these links if you'd like to connect
+          Click links below to view social media
         </h1>
         <p className="lead" style={popFont}>
-          You can check me out on any of the links below, if you wanna get in
-          touch fill out the form above
+          To connect fill out form above
           <i className="fa fa-arrow-up" />
         </p>
         <hr className="my-4" style={{ backgroundColor: "white" }} />
@@ -43,6 +49,7 @@ const Contact = props => {
 };
 const popFont = {
   color: "white",
-  fontWeight: "bold"
+  fontWeight: "bold",
+  alignSelf: "center"
 };
 export default Contact;

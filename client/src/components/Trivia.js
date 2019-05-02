@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "./index.css";
-import classnames from "classnames";
+import * as triviaServices from "../services/Trivia.js";
 class Trivia extends React.Component {
   state = {
     number: "",
@@ -17,8 +17,20 @@ class Trivia extends React.Component {
       "swooped",
       "lick",
       "antistalking",
-      "dip"
-    ]
+      "dip",
+      "yut",
+      "cassie",
+      "skeletons in the clost",
+      "malone",
+      "dudette",
+      "trophy wife",
+      "gump",
+      "bum",
+      "scmuck",
+      "pree"
+    ],
+    numberSearch: "",
+    numberFact: ""
   };
 
   onClick = async e => {
@@ -42,11 +54,57 @@ class Trivia extends React.Component {
       [e.target.name]: e.target.value
     });
   };
-  randomizeWordSearch = () => {
+  randomizeWordSearch = async () => {
     var item = this.state.randomWords[
       Math.floor(Math.random() * this.state.randomWords.length)
     ];
-    console.log(item);
+    try {
+      let response = await triviaServices.getTrivia(item);
+      this.setState({
+        urbanResults: response.data,
+        urbanWord: item
+      });
+    } catch (err) {
+      console.log(err);
+      this.setState({ urbanResults: "Unable to find any definitions" });
+    }
+  };
+
+  searchUrbanWord = async () => {
+    let { urbanWord } = this.state;
+    try {
+      let response = await triviaServices.getTrivia(urbanWord);
+      this.setState({
+        urbanResults: response.data
+      });
+    } catch (err) {
+      console.log(err);
+      this.setState({ urbanResults: "Unable to find any definitions" });
+    }
+  };
+  searchRandomNumber = async () => {
+    var item = Math.floor(Math.random() * 100);
+    try {
+      let response = await triviaServices.getNumber(item);
+      this.setState({
+        numberSearch: item,
+        numberFact: response.data
+      });
+    } catch (err) {
+      console.log(err);
+      this.setState({ urbanResults: "Unable to find any definitions" });
+    }
+  };
+  numberSearch = async () => {
+    try {
+      let response = await triviaServices.getNumber(this.state.numberSearch);
+      this.setState({
+        numberFact: response.data
+      });
+    } catch (err) {
+      console.log(err);
+      this.setState({ urbanResults: "Unable to find any definitions" });
+    }
   };
   render() {
     return (
@@ -59,6 +117,116 @@ class Trivia extends React.Component {
           justifyContent: "center"
         }}
       >
+        <div className="col-lg-4 col-sm-12">
+          <div
+            className=" triviaDisplay"
+            style={{
+              color: "white",
+              fontFamily: '"Times New Roman", Times, serif',
+              display: "flex",
+              justifyContent: "center"
+            }}
+          >
+            <h1> Numbers</h1>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              flexWrap: "wrap",
+              justifyContent: "center"
+            }}
+          >
+            <div
+              style={{
+                alignSelf: "center",
+                margin: "10%",
+                display: "flex",
+                flexDirection: "column"
+              }}
+              className=" triviaDisplay"
+            >
+              <label
+                style={{
+                  alignSelf: "center",
+                  color: "white",
+                  fontWeight: "bold"
+                }}
+              >
+                INPUT NUMBER
+              </label>
+              <input
+                className="form-control  "
+                type="number"
+                name="numberSearch"
+                value={this.state.numberSearch}
+                onChange={this.onChange}
+                style={inputBox}
+              />
+              <label
+                style={{
+                  alignSelf: "center",
+                  color: "white",
+                  marginTop: "10%",
+                  fontWeight: "bold"
+                }}
+              >
+                NUMBER FACT
+              </label>
+              <textarea
+                cols="30"
+                rows="10"
+                style={inputBox}
+                value={this.state.numberFact}
+                onChange={() => null}
+                disabled
+              />
+
+              <label
+                style={{
+                  alignSelf: "center",
+                  color: "white",
+                  marginTop: "10%",
+                  fontWeight: "bold"
+                }}
+              >
+                RANDOM NUMBER
+              </label>
+              <div className="col-12 weatherFadeInUp2">
+                <button
+                  className="btn-info form-control"
+                  onClick={this.searchRandomNumber}
+                >
+                  Search random number
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              flexWrap: "wrap",
+              justifyContent: "space-around"
+            }}
+            className="col-12"
+          >
+            <div className="col-12 weatherFadeInUp2">
+              <button
+                className={
+                  this.state.numberSearch || this.state.numberSearch === 0
+                    ? "btn-success form-control"
+                    : "btn-danger form-control"
+                }
+                disabled={!this.state.numberSearch ? true : false}
+                onClick={this.numberSearch}
+              >
+                {this.state.numberSearch ? "Search" : "No value"}
+              </button>
+            </div>
+          </div>
+        </div>
+        {/* jfkldsajklf;dsjalkfjdsa;lfjsda;jfl;kdsaj;fjas;dlfjasdfkjl;dsaj;flsda */}
         <div className="col-lg-4 col-sm-12">
           <div
             className=" triviaDisplay"
@@ -153,13 +321,14 @@ class Trivia extends React.Component {
               flexWrap: "wrap",
               justifyContent: "space-around"
             }}
+            className="col-12"
           >
             <div className="col-12 weatherFadeInUp2">
               <button
                 className="btn-success form-control"
                 onClick={this.onClick}
               >
-                Click for random trivia
+                random trivia
               </button>
             </div>
           </div>
@@ -226,13 +395,8 @@ class Trivia extends React.Component {
                 value={this.state.urbanResults}
                 onChange={() => null}
                 disabled
-                style={{
-                  overflow: "auto",
-                  background: (0, 151, 19, 0.1),
-                  color: "white",
-                  fontWeight: "bold"
-                }}
               />
+
               <label
                 style={{
                   alignSelf: "center",
@@ -253,17 +417,10 @@ class Trivia extends React.Component {
               /> */}
               <div className="col-12 weatherFadeInUp2">
                 <button
-                  className={
-                    this.state.urbanWord.trim()
-                      ? "btn-danger form-control"
-                      : "btn-success form-control"
-                  }
-                  disabled={this.state.urbanWord.trim() ? true : false}
+                  className={"form-control btn-info"}
                   onClick={this.randomizeWordSearch}
                 >
-                  {this.state.urbanWord.trim()
-                    ? "Input has value"
-                    : "Search random word"}
+                  random word
                 </button>
               </div>
             </div>
@@ -275,6 +432,7 @@ class Trivia extends React.Component {
               flexWrap: "wrap",
               justifyContent: "space-around"
             }}
+            className="col-12"
           >
             <div className="col-12 weatherFadeInUp2">
               <button
@@ -284,7 +442,7 @@ class Trivia extends React.Component {
                     : "btn-danger form-control"
                 }
                 disabled={!this.state.urbanWord.trim() ? true : false}
-                onClick={this.onClick}
+                onClick={this.searchUrbanWord}
               >
                 {this.state.urbanWord.trim() ? "Search" : "No value"}
               </button>

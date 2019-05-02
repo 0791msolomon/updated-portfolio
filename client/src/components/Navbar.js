@@ -78,7 +78,7 @@ class Navbar extends Component {
                 </h5>
               </Link>
             </li>
-            <li
+            {/* <li
               style={{
                 marginTop: "1%"
               }}
@@ -89,7 +89,7 @@ class Navbar extends Component {
                   Todo List
                 </h5>
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </nav>
