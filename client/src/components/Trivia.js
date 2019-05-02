@@ -36,9 +36,7 @@ class Trivia extends React.Component {
   onClick = async e => {
     e.preventDefault();
     try {
-      let response = await axios.get("http://jservice.io/api/random");
-
-      console.log(response);
+      let response = await triviaServices.randomTrivia();
       this.setState({
         trivia: true,
         category: response.data[0].category.title,
@@ -47,7 +45,21 @@ class Trivia extends React.Component {
       });
     } catch (err) {
       console.log(err);
+      this.setState({
+        category: "Not found",
+        question: "Not found",
+        answer: "Not found"
+      });
     }
+    // try {
+
+    //   let response = await axios.get("http://jservice.io/api/random");
+
+    //   console.log(response);
+    //
+    // } catch (err) {
+    //   console.log(err);
+    // }
   };
   onChange = e => {
     this.setState({

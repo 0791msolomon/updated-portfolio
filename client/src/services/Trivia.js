@@ -20,3 +20,12 @@ export const getNumber = async number => {
     return err;
   }
 };
+
+export const randomTrivia = async () => {
+  try {
+    let response = axios.get(`${baseUrl}/randomTrivia`);
+    return response;
+  } catch (err) {
+    return err;
+  }
+};

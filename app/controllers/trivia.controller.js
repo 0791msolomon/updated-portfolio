@@ -24,4 +24,13 @@ const getNumber = async (req, res) => {
   }
 };
 
-module.exports = { findWord, getNumber };
+const randomTrivia = async (req, res) => {
+  try {
+    let response = await axios.get("http://jservice.io/api/random");
+    res.status(200).send(response.data);
+  } catch (err) {
+    res.status(400).send(err);
+  }
+};
+
+module.exports = { findWord, getNumber, randomTrivia };
